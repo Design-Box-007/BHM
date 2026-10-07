@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { SEO } from '../components/SEO/SEO';
 import { ServicesHero } from '../sections/services/ServicesHero';
-import { ServicesCapabilities } from '../sections/services/ServicesCapabilities';
 import { ServicesPreview } from '../sections/home/ServicesPreview';
 import { Testimonials } from '../sections/home/Testimonials';
 import { ServicesCTA } from '../sections/services/ServicesCTA';
+import { ServicesFAQ } from '../sections/services/ServicesFAQ';
 import { animatePageIn } from '../animations/pageTransitions';
 
 export const Services: React.FC = () => {
@@ -26,7 +26,7 @@ export const Services: React.FC = () => {
       <ServicesHero />
 
       {/* 2. Capabilities & About Summary with Stats and Partner Logos */}
-      <ServicesCapabilities />
+      {/* <ServicesCapabilities /> */}
 
       {/* 3. Interactive End-to-End Services Section */}
       <ServicesPreview />
@@ -36,6 +36,9 @@ export const Services: React.FC = () => {
 
       {/* 5. CTA Section with Contact Details & Craftsmanship Gallery */}
       <ServicesCTA />
+
+      {/* 6. Frequently Asked Questions – BHM Steels Services */}
+      <ServicesFAQ />
     </div>
   );
 };

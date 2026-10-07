@@ -77,7 +77,7 @@ export const ImageReveal: React.FC<ImageRevealProps> = ({
     <div
       ref={containerRef}
       className={clsx(
-        'group relative overflow-hidden rounded-[10px] bg-[#0c0d14]',
+        'group relative overflow-hidden rounded-[10px] bg-[#204268]',
         aspectRatio,
         className
       )}
@@ -93,7 +93,7 @@ export const ImageReveal: React.FC<ImageRevealProps> = ({
         )}
       />
       {overlay && (
-        <div className="absolute inset-0 bg-gradient-to-t from-[#030716]/90 via-[#030716]/30 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#204268]/90 via-[#204268]/30 to-transparent pointer-events-none" />
       )}
     </div>
   );

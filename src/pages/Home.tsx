@@ -7,7 +7,7 @@ import { ServicesPreview } from '../sections/home/ServicesPreview';
 import { GalleryPreview } from '../sections/home/GalleryPreview';
 import { Testimonials } from '../sections/home/Testimonials';
 import { CTA } from '../sections/home/CTA';
-import { ArticlesSection } from '../sections/home/ArticlesSection';
+import { FaqsSection } from '../sections/home/FaqsSection';
 import { animatePageIn } from '../animations/pageTransitions';
 
 export const Home: React.FC = () => {
@@ -22,8 +22,8 @@ export const Home: React.FC = () => {
   return (
     <div ref={pageRef} className="w-full">
       <SEO
-        title="Precision Welding & Metal Fabrication Solutions"
-        description="Forgeon delivers high-performance structural welding and custom metal fabrication engineered for extreme safety, durability, and industrial excellence."
+        title="Precision Structural Bonding & Metal Fabrication Solutions"
+        description="BHM delivers high-performance structural bonding, precision welding, and custom metal fabrication engineered for extreme durability, safety, and industrial excellence."
       />
       {/* 1. Hero Section with Watermark Marquee & Rotated Card */}
       <Hero />
@@ -47,7 +47,7 @@ export const Home: React.FC = () => {
       <CTA />
 
       {/* 8. Expert Welding Articles on Warm Cream Background */}
-      <ArticlesSection />
+      <FaqsSection />
     </div>
   );
 };

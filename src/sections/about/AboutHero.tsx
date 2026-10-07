@@ -85,18 +85,18 @@ export const AboutHero: React.FC = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="about-hero-section-wrapper relative bg-black overflow-x-hidden">
+    <div ref={containerRef} className="about-hero-section-wrapper relative bg-[#204268] overflow-x-hidden">
       {/* 1. pagetitle-section */}
-      <section className="pagetitle-section bg-black relative pt-36 pb-72 sm:pt-44 sm:pb-80 md:pt-48 md:pb-96 text-center overflow-hidden border-b border-white/5">
+      <section className="pagetitle-section bg-[#204268] relative pt-28 pb-48 sm:pt-36 sm:pb-64 md:pt-48 md:pb-96 text-center overflow-hidden border-b border-white/10">
         {/* Atmosphere background overlay */}
         <div className="pagetitle-image-box about absolute inset-0 -z-10 pointer-events-none overflow-hidden">
           <img
             src="/images/about-hero-bg.jpg"
             alt="Dark industrial metal fabrication background"
-            className="w-full h-full object-cover opacity-25 filter brightness-100 contrast-100"
+            className="w-full h-full object-cover opacity-20 filter brightness-100 contrast-100"
           />
-          <div className="absolute inset-0 bg-radial-[ellipse_at_center] from-transparent via-black/80 to-black" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black" />
+          <div className="absolute inset-0 bg-radial-[ellipse_at_center] from-transparent via-[#204268]/80 to-[#204268]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#204268]/80 via-transparent to-[#204268]" />
         </div>
 
         <div className="w-layout-blockcontainer container w-container max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
@@ -105,13 +105,7 @@ export const AboutHero: React.FC = () => {
             <div className="pagetitle-big-title-box mb-3 sm:mb-5">
               <div className="pagetitle-title-box">
                 <h1
-                  className="pagetitle-big-title uppercase font-black text-white tracking-tight leading-none"
-                  style={{
-                    fontFamily: '"Mona Sans Condensed", "Mona Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-                    fontWeight: 900,
-                    fontSize: 'clamp(52px, 12vw, 140px)',
-                    letterSpacing: 'normal',
-                  }}
+                  className="pagetitle-big-title uppercase font-display font-bold text-white tracking-tight leading-none text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
                 >
                   About Us
                 </h1>
@@ -120,8 +114,8 @@ export const AboutHero: React.FC = () => {
 
             {/* pagetitle-inner-title-box */}
             <div className="pagetitle-inner-title-box max-w-3xl mx-auto">
-              <h2 className="pagetitle-inner-title text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 leading-relaxed drop-shadow-md">
-                Certified welding &amp; metal fabrication experts built on strength and precision
+              <h2 className="pagetitle-inner-title text-base sm:text-lg md:text-xl font-medium text-white/90 leading-relaxed font-sans">
+                Certified Welding &amp; Metal Fabrication Experts
               </h2>
             </div>
           </div>
@@ -131,12 +125,12 @@ export const AboutHero: React.FC = () => {
       {/* 2. about-image-section */}
       <section
         ref={imageSectionRef}
-        className="about-image-section relative w-full bg-black min-h-[10vh] flex flex-col justify-end"
+        className="about-image-section relative w-full bg-[#204268] min-h-[10vh] flex flex-col justify-end"
       >
         <div className="w-layout-blockcontainer container-fluid padding-zero w-container w-full flex justify-center">
           <div
             ref={imageBoxRef}
-            className="about-big-image-box relative overflow-hidden mx-auto bg-[#0c0d14] shadow-2xl will-change-transform will-change-[width,height,border-radius]"
+            className="about-big-image-box relative overflow-hidden mx-auto bg-[#204268] shadow-2xl will-change-transform will-change-[width,height,border-radius]"
             style={{
               width: '24.5%',
               height: '256px',
@@ -152,7 +146,7 @@ export const AboutHero: React.FC = () => {
               alt="About Big Image"
               className="about-big-image w-full h-full object-cover object-center will-change-transform"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#204268]/40 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
       </section>

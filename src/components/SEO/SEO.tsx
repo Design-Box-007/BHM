@@ -8,11 +8,11 @@ interface SEOProps {
 
 export const SEO: React.FC<SEOProps> = ({
   title,
-  description = "Forgeon — High-performance structural welding, metal fabrication, and engineering solutions.",
-  keywords = "welding, metal fabrication, structural welding, pipe welding, industrial fabrication, Forgeon",
+  description = "BHM — Your all-in-one structural bonding and metal fabrication partner.",
+  keywords = "bonding, structural bonding, metal fabrication, structural welding, industrial fabrication, BHM",
 }) => {
   useEffect(() => {
-    document.title = `${title} | Forgeon Precision Welding`;
+    document.title = `${title} | BHM Structural Bonding`;
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {

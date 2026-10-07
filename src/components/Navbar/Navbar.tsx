@@ -4,15 +4,15 @@ import { clsx } from 'clsx';
 import { X, ChevronDown, ArrowRight } from 'lucide-react';
 
 // Character-by-character Split Rolling Text component matching Webflow gsap_split_letter animation
-const SplitRollingText: React.FC<{ text: string; isActive?: boolean; isLight?: boolean }> = ({
+const SplitRollingText: React.FC<{ text: string; isActive?: boolean; isScrolled?: boolean }> = ({
   text,
   isActive = false,
-  isLight = false,
+  isScrolled = false,
 }) => {
   const letters = text.split('');
 
   return (
-    <span className="relative inline-block overflow-hidden h-[20px] leading-[20px] select-none">
+    <span className="relative inline-block overflow-hidden h-[20px] leading-[20px] select-none font-sans uppercase text-sm font-semibold tracking-wider">
       {/* Top text layer */}
       <span className="inline-flex" aria-label={text}>
         {letters.map((char, index) => (
@@ -22,13 +22,13 @@ const SplitRollingText: React.FC<{ text: string; isActive?: boolean; isLight?: b
               transitionDelay: `${index * 35}ms`,
             }}
             className={clsx(
-              "inline-block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full font-sans uppercase text-sm font-semibold tracking-wider",
-              isLight
+              "inline-block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full",
+              isScrolled
                 ? isActive
-                  ? "text-[#030716]"
-                  : "text-[#030716]/80 group-hover:text-[#030716]"
+                  ? "text-[#204268] font-bold"
+                  : "text-[#204268]/80 group-hover:text-[#204268]"
                 : isActive
-                  ? "text-white"
+                  ? "text-white font-bold"
                   : "text-white/80 group-hover:text-white"
             )}
           >
@@ -46,14 +46,8 @@ const SplitRollingText: React.FC<{ text: string; isActive?: boolean; isLight?: b
               transitionDelay: `${index * 35}ms`,
             }}
             className={clsx(
-              "inline-block transform translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0 font-sans uppercase text-sm font-semibold tracking-wider",
-              isLight
-                ? isActive
-                  ? "text-[#ffb400]"
-                  : "text-[#030716]"
-                : isActive
-                  ? "text-[#ffb400]"
-                  : "text-white"
+              "inline-block transform translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0",
+              isScrolled ? "text-[#204268]" : "text-white"
             )}
           >
             {char === ' ' ? '\u00A0' : char}
@@ -70,6 +64,8 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobilePagesDropdownOpen, setMobilePagesDropdownOpen] = useState(false);
   const location = useLocation();
+
+  const isLightHeader = scrolled || location.pathname === '/services';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,55 +97,46 @@ export const Navbar: React.FC = () => {
     { name: 'Linkedin', href: 'https://linkedin.com', icon: 'in' },
   ];
 
-  const isServiceDetailPage = /^\/services?\/[^\/]+/.test(location.pathname);
-  const isLight = isServiceDetailPage || scrolled;
-
   return (
     <header
       className={clsx(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-black/5'
-          : isServiceDetailPage
-            ? 'bg-white/95 backdrop-blur-md border-b border-black/5'
-            : 'bg-transparent'
+        isLightHeader
+          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-[#204268]/15'
+          : 'bg-transparent'
       )}
     >
       {/* Top Navbar Bar */}
       <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-20 md:h-15">
-          {/* Logo on Left: // Forgeon with discrete bottom line segment */}
+        <div className="flex items-center justify-between h-20 md:h-18">
+          {/* Logo on Left: BHM uploaded logo */}
           <div
             className={clsx(
               "flex items-center border-b h-full pr-8 shrink-0 transition-colors duration-300",
-              isLight ? "border-black/15" : "border-white/20"
+              isLightHeader ? "border-[#204268]/20" : "border-white/20"
             )}
           >
             <Link
               to="/"
-              className="flex items-center gap-2 group focus:outline-hidden"
-              aria-label="Forgeon Home"
+              className="flex items-center group focus:outline-hidden"
+              aria-label="BHM Home"
             >
-              <span
+              <div
                 className={clsx(
-                  "font-display text-2xl md:text-3xl font-bold tracking-tight flex items-center gap-1.5 transition-colors duration-300",
-                  isLight ? "text-[#030716]" : "text-white"
+                  "px-2.5 py-1 rounded-[6px] flex items-center transition-all duration-300 group-hover:scale-105",
+                  isLightHeader ? "border-[#204268]/10 shadow-xs" : "bg-white shadow-sm"
                 )}
               >
-                <span
-                  className={clsx(
-                    "font-sans font-light tracking-tighter transition-colors duration-300",
-                    isLight ? "text-[#030716]" : "text-[#ffb400]"
-                  )}
-                >
-                  //
-                </span>
-                <span>Forgeon</span>
-              </span>
+                <img
+                  src="/images/bhm-logo.png"
+                  alt="BHM - Your all-in-one structural bonding partner"
+                  className="h-16 sm:h-16 w-auto object-contain"
+                />
+              </div>
             </Link>
           </div>
 
-          {/* Desktop Navigation Links with generous gap and larger font */}
+          {/* Desktop Navigation Links without circles beside each menu */}
           <nav className="hidden lg:flex items-center justify-between flex-1 h-full px-6 gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <NavLink
@@ -157,36 +144,19 @@ export const Navbar: React.FC = () => {
                 to={link.path}
                 className={({ isActive }) =>
                   clsx(
-                    'group relative h-full flex-1 inline-flex items-center justify-start gap-2.5 px-3 pb-0.5 text-sm font-semibold tracking-wider transition-all duration-500 border-b cursor-pointer',
-                    isLight
+                    'group relative h-full flex-1 inline-flex items-center justify-center px-3 pb-0.5 text-sm font-semibold tracking-wider transition-all duration-300 border-b cursor-pointer',
+                    isLightHeader
                       ? isActive
-                        ? 'text-[#030716] border-b-2 border-b-[#030716]'
-                        : 'text-[#030716]/80 hover:text-[#030716] border-b-black/15 hover:border-b-black/50'
+                        ? 'text-[#204268] border-b-2 border-b-[#204268]'
+                        : 'text-[#204268]/80 hover:text-[#204268] border-b-[#204268]/20 hover:border-b-[#204268]/60'
                       : isActive
-                        ? 'text-white border-b-2 border-b-[#ffb400]'
+                        ? 'text-white border-b-2 border-b-white'
                         : 'text-white/80 hover:text-white border-b-white/20 hover:border-b-white/60'
                   )
                 }
               >
                 {({ isActive }) => (
-                  <>
-                    {/* Unfilled Circle Indicator ○ with hover pop */}
-                    <span
-                      className={clsx(
-                        'w-3 h-3 rounded-full border transition-all duration-500 shrink-0 group-hover:scale-110',
-                        isLight
-                          ? isActive
-                            ? 'border-[#030716] bg-transparent'
-                            : 'border-black/30 group-hover:border-[#030716]'
-                          : isActive
-                            ? 'border-[#ffb400] bg-transparent'
-                            : 'border-white/60 group-hover:border-white'
-                      )}
-                    />
-
-                    {/* Split Letter-by-Letter Rolling Text */}
-                    <SplitRollingText text={link.label} isActive={isActive} isLight={isLight} />
-                  </>
+                  <SplitRollingText text={link.label} isActive={isActive} isScrolled={isLightHeader} />
                 )}
               </NavLink>
             ))}
@@ -196,7 +166,7 @@ export const Navbar: React.FC = () => {
           <div
             className={clsx(
               "flex items-center justify-end h-full border-b pl-8 shrink-0 transition-colors duration-300",
-              isLight ? "border-black/15" : "border-white/20"
+              isLightHeader ? "border-[#204268]/20" : "border-white/20"
             )}
           >
             {/* Desktop Social Drawer Trigger */}
@@ -204,7 +174,9 @@ export const Navbar: React.FC = () => {
               onClick={() => setSocialDropdownOpen(!socialDropdownOpen)}
               className={clsx(
                 "hidden lg:flex p-2.5 transition-colors focus:outline-hidden cursor-pointer",
-                isLight ? "text-[#030716] hover:opacity-75" : "text-white hover:text-[#ffb400]"
+                isLightHeader
+                  ? "text-[#204268] hover:text-[#204268]/70"
+                  : "text-white hover:text-white/80"
               )}
               aria-label="Toggle Social Menu"
             >
@@ -212,24 +184,9 @@ export const Navbar: React.FC = () => {
                 <X className="w-6 h-6" />
               ) : (
                 <div className="flex flex-col items-end gap-1.5 w-6">
-                  <span
-                    className={clsx(
-                      "w-6 h-[2px] rounded-full transition-all group-hover:w-6",
-                      isLight ? "bg-[#030716]" : "bg-white"
-                    )}
-                  />
-                  <span
-                    className={clsx(
-                      "w-4 h-[2px] rounded-full transition-all group-hover:w-6",
-                      isLight ? "bg-[#030716]" : "bg-white"
-                    )}
-                  />
-                  <span
-                    className={clsx(
-                      "w-6 h-[2px] rounded-full transition-all group-hover:w-6",
-                      isLight ? "bg-[#030716]" : "bg-white"
-                    )}
-                  />
+                  <span className={clsx("w-6 h-[2px] rounded-full transition-all group-hover:w-6", isLightHeader ? "bg-[#204268]" : "bg-white")} />
+                  <span className={clsx("w-4 h-[2px] rounded-full transition-all group-hover:w-6", isLightHeader ? "bg-[#204268]" : "bg-white")} />
+                  <span className={clsx("w-6 h-[2px] rounded-full transition-all group-hover:w-6", isLightHeader ? "bg-[#204268]" : "bg-white")} />
                 </div>
               )}
             </button>
@@ -239,7 +196,9 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={clsx(
                 "flex lg:hidden p-2 transition-colors focus:outline-hidden cursor-pointer",
-                isLight ? "text-[#030716] hover:opacity-75" : "text-white hover:text-[#ffb400]"
+                isLightHeader
+                  ? "text-[#204268] hover:text-[#204268]/70"
+                  : "text-white hover:text-white/80"
               )}
               aria-label="Toggle Mobile Menu"
             >
@@ -247,24 +206,9 @@ export const Navbar: React.FC = () => {
                 <X className="w-6 h-6" />
               ) : (
                 <div className="flex flex-col gap-1.5 w-6">
-                  <span
-                    className={clsx(
-                      "w-6 h-[2px] rounded-full",
-                      isLight ? "bg-[#030716]" : "bg-white"
-                    )}
-                  />
-                  <span
-                    className={clsx(
-                      "w-6 h-[2px] rounded-full",
-                      isLight ? "bg-[#030716]" : "bg-white"
-                    )}
-                  />
-                  <span
-                    className={clsx(
-                      "w-6 h-[2px] rounded-full",
-                      isLight ? "bg-[#030716]" : "bg-white"
-                    )}
-                  />
+                  <span className={clsx("w-6 h-[2px] rounded-full", isLightHeader ? "bg-[#204268]" : "bg-white")} />
+                  <span className={clsx("w-6 h-[2px] rounded-full", isLightHeader ? "bg-[#204268]" : "bg-white")} />
+                  <span className={clsx("w-6 h-[2px] rounded-full", isLightHeader ? "bg-[#204268]" : "bg-white")} />
                 </div>
               )}
             </button>
@@ -278,17 +222,12 @@ export const Navbar: React.FC = () => {
           <div
             className={clsx(
               "w-[260px] rounded-[16px] backdrop-blur-md shadow-2xl p-6 border transition-colors",
-              isLight
-                ? "bg-white/95 border-black/10 text-[#030716]"
-                : "bg-[#1c202a]/95 border-white/10 text-white"
+              isLightHeader
+                ? "bg-white text-[#204268] border-[#204268]/20"
+                : "bg-[#204268]/95 border-white/20 text-white"
             )}
           >
-            <div
-              className={clsx(
-                "flex flex-col divide-y",
-                isLight ? "divide-black/10" : "divide-white/10"
-              )}
-            >
+            <div className={clsx("flex flex-col divide-y", isLightHeader ? "divide-[#204268]/10" : "divide-white/10")}>
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -297,9 +236,9 @@ export const Navbar: React.FC = () => {
                   rel="noopener noreferrer"
                   className={clsx(
                     "group flex items-center justify-between py-3.5 text-sm font-medium transition-colors",
-                    isLight
-                      ? "text-[#030716]/90 hover:text-[#030716]"
-                      : "text-white/90 hover:text-[#ffb400]"
+                    isLightHeader
+                      ? "text-[#204268]/90 hover:text-[#204268]"
+                      : "text-white/90 hover:text-white"
                   )}
                 >
                   <div className="flex items-center gap-3">
@@ -311,9 +250,7 @@ export const Navbar: React.FC = () => {
                   <ArrowRight
                     className={clsx(
                       "w-4 h-4 transition-transform group-hover:translate-x-1",
-                      isLight
-                        ? "text-black/40 group-hover:text-[#030716]"
-                        : "text-white/50 group-hover:text-[#ffb400]"
+                      isLightHeader ? "text-[#204268]/50 group-hover:text-[#204268]" : "text-white/50 group-hover:text-white"
                     )}
                   />
                 </a>
@@ -323,10 +260,17 @@ export const Navbar: React.FC = () => {
         </div>
       )}
 
-      {/* Mobile Floating White Menu Card */}
+      {/* Mobile Floating Menu Card */}
       {mobileMenuOpen && (
         <div className="block lg:hidden px-4 pt-2 pb-6 animate-fadeIn">
-          <div className="w-full max-w-md mx-auto rounded-[16px] bg-white text-[#030716] shadow-2xl p-6 border border-black/10">
+          <div
+            className={clsx(
+              "w-full max-w-md mx-auto rounded-[16px] shadow-2xl p-6 border transition-colors",
+              isLightHeader
+                ? "bg-white text-[#204268] border-[#204268]/20"
+                : "bg-[#204268] text-white border-white/20"
+            )}
+          >
             <nav className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <NavLink
@@ -335,80 +279,83 @@ export const Navbar: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) =>
                     clsx(
-                      'flex items-center gap-3 py-1 text-sm font-sans font-semibold uppercase tracking-wider transition-colors',
-                      isActive ? 'text-[#030716]' : 'text-[#030716]/80 hover:text-[#030716]'
+                      'flex items-center gap-3 py-1.5 text-sm font-sans font-semibold uppercase tracking-wider transition-colors',
+                      isLightHeader
+                        ? isActive
+                          ? 'text-[#204268] font-bold'
+                          : 'text-[#204268]/80 hover:text-[#204268]'
+                        : isActive
+                          ? 'text-white font-bold'
+                          : 'text-white/80 hover:text-white'
                     )
                   }
                 >
                   {({ isActive }) => (
                     <div className="flex items-center justify-between w-full">
-                      <div className="flex items-center gap-3">
-                        {/* Unfilled Circle Indicator ○ */}
-                        <span
-                          className={clsx(
-                            'w-3.5 h-3.5 rounded-full border transition-all shrink-0',
-                            isActive ? 'border-[#030716] bg-transparent' : 'border-[#030716]/60'
-                          )}
-                        />
-                        <span
-                          className={clsx(
-                            'font-sans uppercase text-sm tracking-wider pb-0.5',
-                            isActive && 'border-b-2 border-[#ffb400]'
-                          )}
-                        >
-                          {link.label}
-                        </span>
-                      </div>
+                      <span
+                        className={clsx(
+                          'font-sans uppercase text-sm tracking-wider pb-0.5',
+                          isActive && (isLightHeader ? 'border-b-2 border-[#204268]' : 'border-b-2 border-white')
+                        )}
+                      >
+                        {link.label}
+                      </span>
                     </div>
                   )}
                 </NavLink>
               ))}
 
-              {/* Collapsible Pages Dropdown matching Image 2 */}
-              <div className="pt-1">
+              {/* Collapsible Pages Dropdown */}
+              <div className={clsx("pt-2 border-t", isLightHeader ? "border-[#204268]/10" : "border-white/10")}>
                 <button
                   onClick={() => setMobilePagesDropdownOpen(!mobilePagesDropdownOpen)}
-                  className="flex items-center justify-between w-full py-1 text-sm font-sans font-semibold uppercase tracking-wider text-[#030716] cursor-pointer"
+                  className={clsx(
+                    "flex items-center justify-between w-full py-1 text-sm font-sans font-semibold uppercase tracking-wider cursor-pointer",
+                    isLightHeader ? "text-[#204268]" : "text-white"
+                  )}
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="w-3.5 h-3.5 rounded-full border border-[#030716]/60 shrink-0" />
-                    <span>PAGES</span>
-                  </div>
+                  <span>PAGES</span>
                   <ChevronDown
                     className={clsx(
-                      'w-4 h-4 text-[#030716] transition-transform duration-300',
+                      'w-4 h-4 transition-transform duration-300',
+                      isLightHeader ? "text-[#204268]" : "text-white",
                       mobilePagesDropdownOpen && 'rotate-180'
                     )}
                   />
                 </button>
 
                 {mobilePagesDropdownOpen && (
-                  <div className="pl-7 pt-2 flex flex-col space-y-2 text-xs font-medium text-[#686e86]">
+                  <div
+                    className={clsx(
+                      "pl-4 pt-3 flex flex-col space-y-2.5 text-xs font-medium",
+                      isLightHeader ? "text-[#204268]/80" : "text-white/80"
+                    )}
+                  >
                     <Link
                       to="/about"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="py-1 hover:text-[#030716]"
+                      className={clsx("py-1 transition-colors", isLightHeader ? "hover:text-[#204268]" : "hover:text-white")}
                     >
                       Company Story
                     </Link>
                     <Link
                       to="/services"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="py-1 hover:text-[#030716]"
+                      className={clsx("py-1 transition-colors", isLightHeader ? "hover:text-[#204268]" : "hover:text-white")}
                     >
                       Service Specifications
                     </Link>
                     <Link
                       to="/products"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="py-1 hover:text-[#030716]"
+                      className={clsx("py-1 transition-colors", isLightHeader ? "hover:text-[#204268]" : "hover:text-white")}
                     >
                       Fabricated Products
                     </Link>
                     <Link
                       to="/gallery"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="py-1 hover:text-[#030716]"
+                      className={clsx("py-1 transition-colors", isLightHeader ? "hover:text-[#204268]" : "hover:text-white")}
                     >
                       Project Portfolio
                     </Link>

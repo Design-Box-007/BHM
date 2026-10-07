@@ -11,7 +11,7 @@ export const MainLayout: React.FC = () => {
   useLenis();
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-[#030716] text-[#686e86] overflow-x-clip selection:bg-[#ffb400] selection:text-[#030716]">
+    <div className="relative min-h-screen flex flex-col bg-[#204268] text-white overflow-x-clip selection:bg-white selection:text-[#204268]">
       <PageLoader />
       <ScrollToTop />
       <Navbar />

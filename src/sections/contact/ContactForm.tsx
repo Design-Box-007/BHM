@@ -8,7 +8,7 @@ export const ContactForm: React.FC = () => {
     email: '',
     phone: '',
     company: '',
-    serviceType: 'Structural Welding',
+    serviceType: 'Structural Bonding',
     projectScope: '',
     message: '',
   });
@@ -40,34 +40,34 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <section className="py-24 md:py-32 bg-[#030716] border-b border-white/10">
+    <section className="py-24 md:py-32 bg-[#204268] border-b border-white/10 font-sans">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Column: Form Intro & FAQ (5 cols) */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#ffb400] mb-3 block">
+              <span className="text-xs font-semibold uppercase tracking-widest text-white/70 mb-3 block">
                 // Quotation Process
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold uppercase tracking-tight text-white mb-6">
                 Request a comprehensive technical quotation
               </h2>
-              <p className="text-sm sm:text-base text-[#bfbfbf] leading-relaxed mb-8">
-                Attach your CAD files, fabrication drawings, or technical specifications. Our certified welding inspectors and estimating engineers will review your bill of materials and deliver an itemized quote within 24 hours.
+              <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-8">
+                Attach your CAD files, drawings, or technical specifications. Our structural bonding engineers will review your bill of materials and deliver an itemized quote within 24 hours.
               </p>
 
-              <div className="space-y-4 p-6 rounded-[10px] bg-[#101836]/50 border border-white/10">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#ffb400]">
+              <div className="space-y-4 p-6 rounded-[10px] bg-white/5 border border-white/10">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-white">
                   What happens next?
                 </h4>
-                <div className="space-y-3 text-xs text-[#bfbfbf]">
+                <div className="space-y-3 text-xs text-white/80">
                   <div className="flex items-start gap-2.5">
                     <span className="w-5 h-5 rounded-full bg-white/10 text-white flex items-center justify-center font-bold text-[10px] shrink-0">1</span>
-                    <span>Engineering team performs initial CAD feasibility check & material nesting.</span>
+                    <span>Engineering team performs initial structural feasibility check.</span>
                   </div>
                   <div className="flex items-start gap-2.5">
                     <span className="w-5 h-5 rounded-full bg-white/10 text-white flex items-center justify-center font-bold text-[10px] shrink-0">2</span>
-                    <span>Formal price estimation with production lead times & NDT test schedules.</span>
+                    <span>Formal price estimation with production lead times & testing schedules.</span>
                   </div>
                   <div className="flex items-start gap-2.5">
                     <span className="w-5 h-5 rounded-full bg-white/10 text-white flex items-center justify-center font-bold text-[10px] shrink-0">3</span>
@@ -77,22 +77,22 @@ export const ContactForm: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-white/10 text-xs text-[#bfbfbf]">
+            <div className="mt-8 pt-6 border-t border-white/10 text-xs text-white/60">
               <span>Confidentiality guaranteed. All proprietary prints protected by strict mutual NDAs.</span>
             </div>
           </div>
 
           {/* Right Column: Contact Form (7 cols) */}
-          <div className="lg:col-span-7 p-8 sm:p-12 rounded-[12px] bg-[#101836]/40 border border-white/10 shadow-2xl">
+          <div className="lg:col-span-7 p-8 sm:p-12 rounded-[12px] bg-white/5 border border-white/10 shadow-2xl">
             {submitted ? (
               <div className="flex flex-col items-center justify-center text-center py-16 space-y-6">
-                <div className="w-16 h-16 rounded-full bg-[#ffb400]/20 text-[#ffb400] flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-white/10 text-white flex items-center justify-center">
                   <CheckCircle className="w-10 h-10" />
                 </div>
-                <h3 className="text-3xl font-display font-bold uppercase text-white">
+                <h3 className="text-2xl sm:text-3xl font-display font-bold uppercase text-white">
                   Quotation Request Received
                 </h3>
-                <p className="text-sm text-[#bfbfbf] max-w-md">
+                <p className="text-sm text-white/80 max-w-md">
                   Thank you, <strong className="text-white">{formData.name}</strong>. Our estimating engineering department has received your request and will contact you at <strong className="text-white">{formData.email}</strong> shortly.
                 </p>
                 <button
@@ -103,12 +103,12 @@ export const ContactForm: React.FC = () => {
                       email: '',
                       phone: '',
                       company: '',
-                      serviceType: 'Structural Welding',
+                      serviceType: 'Structural Bonding',
                       projectScope: '',
                       message: '',
                     });
                   }}
-                  className="px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#030716] bg-[#ffb400] rounded-[6px] hover:bg-white transition-colors"
+                  className="px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#204268] bg-white rounded-[6px] hover:bg-white/90 transition-colors"
                 >
                   Send Another Inquiry
                 </button>
@@ -116,7 +116,7 @@ export const ContactForm: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 {error && (
-                  <div className="p-4 rounded-[6px] bg-red-500/10 border border-red-500/30 text-red-400 text-xs flex items-center gap-2">
+                  <div className="p-4 rounded-[6px] bg-white/10 border border-white/30 text-white text-xs flex items-center gap-2">
                     <ShieldAlert className="w-4 h-4 shrink-0" />
                     <span>{error}</span>
                   </div>
@@ -124,7 +124,7 @@ export const ContactForm: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#bfbfbf] mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-white/80 mb-2">
                       Full Name *
                     </label>
                     <input
@@ -133,13 +133,13 @@ export const ContactForm: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Robert Smith"
-                      className="w-full px-4 py-3 rounded-[6px] bg-white/5 border border-white/15 text-white text-sm focus:border-[#ffb400] focus:outline-hidden transition-colors"
+                      className="w-full px-4 py-3 rounded-[6px] bg-white/5 border border-white/15 text-white text-sm focus:border-white focus:outline-hidden transition-colors"
                       required
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#bfbfbf] mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-white/80 mb-2">
                       Corporate Email *
                     </label>
                     <input
@@ -148,7 +148,7 @@ export const ContactForm: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="r.smith@contractor.com"
-                      className="w-full px-4 py-3 rounded-[6px] bg-white/5 border border-white/15 text-white text-sm focus:border-[#ffb400] focus:outline-hidden transition-colors"
+                      className="w-full px-4 py-3 rounded-[6px] bg-white/5 border border-white/15 text-white text-sm focus:border-white focus:outline-hidden transition-colors"
                       required
                     />
                   </div>
@@ -156,7 +156,7 @@ export const ContactForm: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#bfbfbf] mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-white/80 mb-2">
                       Phone Number
                     </label>
                     <input
@@ -165,12 +165,12 @@ export const ContactForm: React.FC = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+1 (555) 019-2834"
-                      className="w-full px-4 py-3 rounded-[6px] bg-white/5 border border-white/15 text-white text-sm focus:border-[#ffb400] focus:outline-hidden transition-colors"
+                      className="w-full px-4 py-3 rounded-[6px] bg-white/5 border border-white/15 text-white text-sm focus:border-white focus:outline-hidden transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#bfbfbf] mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-white/80 mb-2">
                       Company / Organization
                     </label>
                     <input
@@ -179,31 +179,31 @@ export const ContactForm: React.FC = () => {
                       value={formData.company}
                       onChange={handleChange}
                       placeholder="Apex Construction LLC"
-                      className="w-full px-4 py-3 rounded-[6px] bg-white/5 border border-white/15 text-white text-sm focus:border-[#ffb400] focus:outline-hidden transition-colors"
+                      className="w-full px-4 py-3 rounded-[6px] bg-white/5 border border-white/15 text-white text-sm focus:border-white focus:outline-hidden transition-colors"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#bfbfbf] mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-white/80 mb-2">
                     Primary Service Category
                   </label>
                   <select
                     name="serviceType"
                     value={formData.serviceType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-[6px] bg-[#101836] border border-white/15 text-white text-sm focus:border-[#ffb400] focus:outline-hidden transition-colors cursor-pointer"
+                    className="w-full px-4 py-3 rounded-[6px] bg-[#204268] border border-white/15 text-white text-sm focus:border-white focus:outline-hidden transition-colors cursor-pointer"
                   >
-                    <option value="Structural Welding">Structural Steel Welding (AWS D1.1)</option>
+                    <option value="Structural Bonding">Structural Bonding & Engineering</option>
                     <option value="Metal Fabrication">CNC Metal Fabrication & Laser Cutting</option>
-                    <option value="Pipe Welding">High-Pressure Pipe Welding (ASME B31.3)</option>
-                    <option value="Custom Fabrication">Custom Industrial Prototype & Skid</option>
-                    <option value="Emergency Repair">Emergency On-Site Mobile Welding</option>
+                    <option value="High Pressure Piping">High-Pressure Piping Systems</option>
+                    <option value="Custom Assembly">Custom Industrial Assembly & Skid</option>
+                    <option value="On-Site Support">On-Site Mobile Support & Maintenance</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#bfbfbf] mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-white/80 mb-2">
                     Project Specifications & Message *
                   </label>
                   <textarea
@@ -212,7 +212,7 @@ export const ContactForm: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Describe material grades, tolerances, estimated tonnage, and required delivery date..."
-                    className="w-full px-4 py-3 rounded-[6px] bg-white/5 border border-white/15 text-white text-sm focus:border-[#ffb400] focus:outline-hidden transition-colors resize-y"
+                    className="w-full px-4 py-3 rounded-[6px] bg-white/5 border border-white/15 text-white text-sm focus:border-white focus:outline-hidden transition-colors resize-y"
                     required
                   />
                 </div>
@@ -221,7 +221,7 @@ export const ContactForm: React.FC = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-[6px] bg-[#ffb400] text-[#030716] font-semibold text-xs uppercase tracking-wider hover:bg-white transition-all shadow-lg cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-[6px] bg-white text-[#204268] font-semibold text-xs uppercase tracking-wider hover:bg-white/90 transition-all shadow-lg cursor-pointer"
                   >
                     {loading ? (
                       <span>Processing Inquiry...</span>

@@ -6,36 +6,36 @@ import { siteConfig } from '../../data/site';
 export const ServicesCTA: React.FC = () => {
   const galleryThumbnails = [
     {
-      src: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80',
-      alt: 'Industrial welder with yellow hardhat sparking',
+      src: '/images/process-01.jpg',
+      alt: 'Project consultation and metal cutting',
     },
     {
-      src: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80',
-      alt: 'Structural steel fabrication and torch cutting',
+      src: '/images/service-cnc-machining.jpg',
+      alt: 'Precision CNC Machining',
     },
     {
-      src: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80',
-      alt: 'Precision metal welding sparks',
+      src: '/images/service-metal-fabrication.jpg',
+      alt: 'Structural steel fabrication and welding',
     },
     {
-      src: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80',
-      alt: 'Overhead arc welding craftsmanship',
+      src: '/images/service-interior-decor.jpg',
+      alt: 'Custom architectural metalwork and interiors',
     },
     {
-      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
-      alt: 'Heavy duty welding seam and joint',
+      src: '/images/service-blasting-coating.jpg',
+      alt: 'Industrial blasting and protective coating',
     },
   ];
 
   return (
-    <section className="pt-20 pb-16 md:pt-28 md:pb-24 bg-white text-[#030716] border-b border-black/10 overflow-hidden">
+    <section className="pt-12 pb-8 sm:pt-16 sm:pb-10 md:pt-24 md:pb-14 bg-white text-[#204268] border-b border-[#204268]/10 overflow-hidden">
       <Container>
         {/* Top Header & Contact Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-8 sm:mb-12 md:mb-16">
           {/* Left Column (7 cols): Headline + CTA Button */}
           <div className="lg:col-span-7 flex flex-col justify-between">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-[#030716] leading-tight tracking-tight mb-8 max-w-xl">
-              Delivering precision welding solutions with quality and reliable results
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-[#204268] leading-tight tracking-tight mb-8 max-w-xl">
+              Delivering precision structural bonding solutions with quality and reliable results
             </h2>
 
             <div>
@@ -50,20 +50,20 @@ export const ServicesCTA: React.FC = () => {
             <div className="space-y-1">
               <a
                 href={`tel:${siteConfig.phoneRaw}`}
-                className="block text-base font-semibold text-[#030716] hover:text-[#ffb400] transition-colors"
+                className="block text-base font-semibold text-[#204268] hover:opacity-80 transition-opacity font-sans"
               >
                 {siteConfig.phone}
               </a>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="block text-sm text-[#686e86] hover:text-[#030716] transition-colors"
+                className="block text-sm text-[#204268]/70 hover:text-[#204268] transition-colors font-sans"
               >
                 {siteConfig.email}
               </a>
             </div>
 
-            <p className="text-xs sm:text-sm text-[#686e86] leading-relaxed pt-2">
-              Every project is executed to meet the highest safety and quality standards. Our experienced team is ready to assist with your custom welding and fabrication needs.
+            <p className="text-xs sm:text-sm text-[#204268]/80 leading-relaxed pt-2 font-sans">
+              Every project is executed to meet the highest safety and quality standards. Our experienced team is ready to assist with your custom structural bonding and fabrication needs.
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ export const ServicesCTA: React.FC = () => {
           {galleryThumbnails.map((thumb, idx) => (
             <div
               key={idx}
-              className="relative aspect-[4/3] rounded-[10px] overflow-hidden border border-black/10 shadow-sm group bg-[#0c0d14]"
+              className="relative aspect-[4/3] rounded-[10px] overflow-hidden border border-[#204268]/15 shadow-sm group bg-[#204268]"
             >
               <img
                 src={thumb.src}
@@ -81,7 +81,7 @@ export const ServicesCTA: React.FC = () => {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-[#204268]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ))}
         </div>

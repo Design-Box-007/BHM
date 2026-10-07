@@ -15,147 +15,147 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    id: "heavy-duty-bar-grating",
-    name: "Industrial Heavy Bar Grating",
-    category: "Structural Flooring",
-    sku: "FGN-GRT-400",
-    tagline: "High-traction safety grating for offshore platforms, refineries, and heavy industrial mezzanines.",
-    description: "Engineered from forge-welded carbon steel or 316 stainless steel with serrated bearing bars for maximum slip resistance and wheel-load distribution.",
-    material: "ASTM A1011 / 316L Stainless",
-    tolerance: "±1.5 mm panel squareness",
-    finish: "Hot-Dip Galvanized / Mill / Passivated",
-    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+    id: "metal-fabrication",
+    name: "Custom Metal Fabrication",
+    category: "Custom Fabrication",
+    sku: "BHM-FAB-001",
+    tagline: "Precision-engineered metal fabrication solutions combining cutting, forming, bending, welding, and assembly.",
+    description: "From cutting and forming to certified welding and surface finishing, every project is engineered with structural integrity, dimensional accuracy, safety, and long-term durability in mind.",
+    material: "Carbon Steel, Stainless Steel, Aluminum",
+    tolerance: "±0.5 mm dimensional accuracy",
+    finish: "Mill / Primer / Powder Coated",
+    image: "/images/service-metal-fabrication.jpg",
     features: [
-      "Maximum wheel load capacity up to H-20 highway rating",
-      "Serrated slip-resistant anti-fatigue walking surface",
-      "Immunity to saline, marine, and chemical atmospheres",
-      "Standard and custom cut-out panel configurations"
+      "Structural steel fabrication to exact project drawings",
+      "Custom metal components and architectural assemblies",
+      "Precision CNC bending, rolling, and forming",
+      "Certified MIG, TIG & ARC structural welding"
     ],
     specs: {
-      "Bearing Bar Depth": "25mm to 65mm",
-      "Bearing Bar Thickness": "5mm to 9mm",
-      "Standard Panel Size": "1000mm x 6000mm",
-      "Coating Thickness": "Min 85 microns hot-dip zinc"
+      "Capabilities": "Cutting, Bending, Welding, Assembly",
+      "Quality Control": "100% Dimensional & Visual Inspection",
+      "Standards": "AWS / ISO Compliant Fabrication",
+      "Turnaround": "Fast turnaround with material test certs"
     }
   },
   {
-    id: "structural-w-beams",
-    name: "Precision Welded Flange Beams",
-    category: "Structural Framing",
-    sku: "FGN-WBM-900",
-    tagline: "Custom deep-web structural beams fabricated to exact architectural camber and loading criteria.",
-    description: "Automated submerged-arc welded wide-flange beams tailored for long clear spans where rolled hot sections are insufficient or weight optimization is critical.",
-    material: "ASTM A572 Grade 50 / Grade 65",
-    tolerance: "AISC Code of Standard Practice ±1.0 mm",
-    finish: "Zinc Silicate Primer / Blast Cleaned SSPC-SP10",
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb18f15f6?auto=format&fit=crop&w=800&q=80",
+    id: "metal-cutting",
+    name: "Precision Metal Cutting",
+    category: "Precision Cutting",
+    sku: "BHM-CUT-002",
+    tagline: "High-accuracy metal cutting using advanced CNC fiber laser and high-definition plasma machinery.",
+    description: "Equipped with modern CNC plasma, laser, and precision sawing machinery to cut plates, sheets, tubes, and structural sections with minimal kerf and tight tolerances.",
+    material: "Steel Plate, Stainless Steel, Brass, Aluminum",
+    tolerance: "±0.1 mm precision cutting",
+    finish: "Clean Dross-Free Edge / Deburred",
+    image: "/images/service-metal-cutting.jpg",
     features: [
-      "Submerged arc full-penetration web-to-flange welds",
-      "Integrated stiffener plates and shear tab connections",
-      "Custom pre-cambering to counteract dead-load deflection",
-      "Full digital traceability with mill test reports"
+      "CNC fiber laser & high-definition plasma cutting",
+      "Precision dimensional plate cutting up to 50mm",
+      "Automated CAD nesting for maximum material yield",
+      "Clean-edge preparation ready for welding"
     ],
     specs: {
-      "Depth Range": "300mm to 2400mm",
-      "Flange Width": "Up to 800mm",
-      "Max Section Length": "24 Meters continuous",
-      "Weld Quality": "100% UT tested flange welds"
+      "Technology": "CNC Fiber Laser & HD Plasma",
+      "Cutting Capacity": "Up to 50mm plate thickness",
+      "Accuracy": "±0.1 mm tolerance",
+      "Profile Types": "Plates, Pipes, Tubes, Channels, Beams"
     }
   },
   {
-    id: "high-pressure-pipe-spools",
-    name: "ASME High-Pressure Pipe Spool",
-    category: "Pressure Piping",
-    sku: "FGN-PSP-550",
-    tagline: "Pre-fabricated skid and interconnecting piping spools for oil & gas and chemical processing.",
-    description: "Turnkey fabricated piping assemblies with 100% X-ray inspected circumferential butt-welds, engineered to minimize field installation downtime and eliminate on-site hot work.",
-    material: "ASTM A106 Gr B / A312 TP316L / Inconel 625",
-    tolerance: "PFI Standard ES-3 (±3 mm end-to-end)",
-    finish: "Pickled & Passivated / Epoxy Clad",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+    id: "blasting-coating",
+    name: "Industrial Blasting & Coating",
+    category: "Surface Treatment",
+    sku: "BHM-BLS-003",
+    tagline: "Professional abrasive shot blasting and multi-layer anti-corrosion protective coatings.",
+    description: "Surface preparation to Swedish SA 2.5 standard followed by multi-layer epoxy, polyurethane, or thermal protective coatings for marine, industrial, and outdoor steel structures.",
+    material: "Structural Steel, Fabricated Vessels, Pipework",
+    tolerance: "SA 2.5 / SSPC-SP 10 Profile",
+    finish: "Zinc Primer + Epoxy Barrier + Polyurethane Topcoat",
+    image: "/images/service-blasting-coating.jpg",
     features: [
-      "ASME B31.3 certified fabrication and weld inspection",
-      "Precision CNC beveling and automatic orbital TIG root pass",
-      "Hydrostatic proof testing up to 10,000 psi",
-      "Internal borescope visual inspection certified"
+      "Industrial abrasive & shot blasting to ISO/SSPC standards",
+      "Multi-coat anti-corrosion protection for C3, C4, C5-M marine exposure",
+      "Controlled climate coating booths ensuring optimal curing",
+      "Dry film thickness (DFT) and cross-hatch adhesion verification"
     ],
     specs: {
-      "Nominal Pipe Size": "1/2\" to 36\" Sch 10 to Sch XXS",
-      "Flange Ratings": "Class 150# through Class 2500#",
-      "Weld Methods": "GTAW (TIG) root + FCAW/SAW cap",
-      "NDE Level": "100% Radiographic / Dye Penetrant"
+      "Blasting Standard": "SA 2.5 Near-White Blast",
+      "Coating Types": "Zinc Rich, Epoxy, Polyurethane, Polyaspartic",
+      "Inspection": "DFT Gauge, Cross-Hatch, Holiday Test",
+      "Durability": "Up to 15-Year Marine Grade Protection"
     }
   },
   {
-    id: "industrial-process-tanks",
-    name: "ASME Pressure & Storage Vessels",
-    category: "Process Equipment",
-    sku: "FGN-VES-800",
-    tagline: "Cylindrical & conical stainless pressure vessels designed for sanitary food, pharma, and chemical storage.",
-    description: "Custom horizontal and vertical vessels manufactured with internal sanitary mirror-polish finishes (Ra < 0.4 µm), dimpled heating jackets, and precision nozzle schedules.",
-    material: "304L, 316L, 2205 Duplex Stainless Steel",
-    tolerance: "ASME Section VIII Div 1 tolerances",
-    finish: "Electropolished Internal / Satin Brush External",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
+    id: "cnc-machining",
+    name: "Precision CNC Machining",
+    category: "Precision Machining",
+    sku: "BHM-CNC-004",
+    tagline: "Multi-axis CNC milling and turning for tight-tolerance complex engineering components.",
+    description: "Utilizing modern multi-axis CNC milling, turning centers, and precision boring tools to produce complex mechanical parts, flanges, shafts, and custom fixtures with repeatable accuracy.",
+    material: "Alloy Steel, Stainless Steel 316, Brass, Bronze, Aluminum",
+    tolerance: "±0.01 mm metrology tolerance",
+    finish: "Ra < 0.4µm Precision Machined / Ground",
+    image: "/images/service-cnc-machining.jpg",
     features: [
-      "ASME 'U' & 'R' Stamp certification compliant",
-      "Laser-welded dimple heat transfer cooling jackets",
-      "Full clean-in-place (CIP) spray ball integration",
-      "Full vacuum to 50 bar internal pressure rating"
+      "Tight-tolerance multi-axis CNC milling and turning",
+      "Complex geometric component manufacturing",
+      "CMM metrology and optical coordinate verification",
+      "Prototype development through high-volume production"
     ],
     specs: {
-      "Capacity": "500 Liters to 60,000 Liters",
-      "Shell Thickness": "4mm to 25mm solid plate",
-      "Internal Roughness": "Ra < 0.4 µm (Electropolished)",
-      "Agitator Mount": "Heavy top/bottom sanitary flange"
+      "Machining Accuracy": "±0.01 mm tolerance",
+      "Machining Types": "3-Axis & 4-Axis CNC Milling, Turning, Boring",
+      "Materials": "Steel, Stainless, Aluminum, Brass, Bronze",
+      "Inspection": "Micrometers, Bore Gauges, CMM Metrology"
     }
   },
   {
-    id: "modular-equipment-skids",
-    name: "Heavy Modular Equipment Skids",
-    category: "Modular Systems",
-    sku: "FGN-SKD-120",
-    tagline: "Rigid structural baseframes designed for compressors, pumps, generators, and chemical injection skids.",
-    description: "Heavy structural steel baseframes designed for 3-point lifting, vibration isolation, and extreme torsional rigidity during offshore marine transportation.",
-    material: "Structural Grade S355J2 / ASTM A36",
-    tolerance: "Machined pad flatness within 0.1 mm/meter",
-    finish: "Marine Grade C5-M 3-Coat Epoxy System",
-    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
+    id: "interior-home-decor",
+    name: "Interior & Architectural Metalwork",
+    category: "Architectural & Bespoke",
+    sku: "BHM-DEC-005",
+    tagline: "Bespoke architectural metal fabrication, luxury interior partitions, furniture frames, and decor.",
+    description: "Specialized in luxury metal accents, custom room dividers, architectural handrails, metal table bases, brass/bronze detailing, and bespoke residential/commercial interior installations.",
+    material: "Stainless Steel 304/316, Mild Steel, Brass, Bronze",
+    tolerance: "±0.5 mm architectural fit-up",
+    finish: "PVD Gold / Matte Black / Brushed Brass / Antique Patina",
+    image: "/images/service-interior-decor.jpg",
     features: [
-      "Engineered lifting lugs certified to DNV 2.7-1",
-      "Integrated drip pans with drain plugs for environmental containment",
-      "Vibration dampening machined pump mounting pads",
-      "Full FEA modal vibration and deflection verification"
+      "Bespoke architectural metalwork tailored to CAD drawings",
+      "Seamless welded corners and invisible fastener engineering",
+      "High-end decorative finishes (PVD, brushed, patina, powder coat)",
+      "Collaborative fit-out with interior designers and architects"
     ],
     specs: {
-      "Max Skid Footprint": "4.5m Width x 18m Length",
-      "Max Payload": "Up to 45 Tons equipment load",
-      "Lifting Certification": "Pad-eye proof load tested 2.5x",
-      "Paint Warranty": "15-Year offshore marine rating"
+      "Products": "Furniture, Screens, Partitions, Handrails, Cladding",
+      "Finishes": "Powder Coat, PVD, Electroplate, Brushed, Patina",
+      "Materials": "Stainless 304/316, Mild Steel, Brass, Aluminum",
+      "Applications": "Luxury Residential, Hospitality, Retail, Offices"
     }
   },
   {
-    id: "custom-mounting-brackets",
-    name: "High-Tolerance Mounting Brackets",
-    category: "Precision Hardware",
-    sku: "FGN-BRK-045",
-    tagline: "High-strength laser-cut and CNC formed brackets for heavy vehicle chasses and industrial machinery.",
-    description: "Batch-manufactured with tight dimensional repeatability using multi-axis CNC bending and robotic pulsed-MIG welding for structural durability under intense cyclical stress.",
-    material: "High-Yield Hardox 450 / Domex 700MC",
-    tolerance: "±0.1 mm laser cut and bent",
-    finish: "Zinc Nickel Electroplate / Black Oxide",
-    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+    id: "welding-services",
+    name: "Certified Welding Solutions",
+    category: "Precision Welding",
+    sku: "BHM-WLD-006",
+    tagline: "High-performance certified structural welding across MIG, TIG, ARC, and Flux-Cored processes.",
+    description: "Comprehensive welding capabilities spanning MIG (GMAW), TIG (GTAW), Stick (SMAW), and Flux-Cored (FCAW) welding for heavy structural joints, pressure lines, and machinery assemblies.",
+    material: "Carbon Steel, High-Tensile Steel, Stainless Steel, Aluminum Alloys",
+    tolerance: "AWS D1.1 Full Penetration Standards",
+    finish: "Dressed / Ground Smooth / Passivated",
+    image: "/images/service-welding-services.jpg",
     features: [
-      "Extreme fatigue resistance under cyclical vibrations",
-      "Countersunk and threaded blind rivet fastener inserts",
-      "Multi-axis CNC forming without micro-cracking",
-      "Automated robotic welding with 100% optical seam check"
+      "Certified welders skilled in MIG, TIG, ARC, and FCAW processes",
+      "Full-penetration welding for extreme structural integrity",
+      "Mobile welding rigs available for on-site fabrication & repairs",
+      "100% NDT inspection: Visual (VT), Dye Penetrant (PT), Ultrasonic (UT)"
     ],
     specs: {
-      "Plate Range": "3mm to 16mm High-Yield Steel",
-      "Batch Volumes": "50 units to 25,000 units/year",
-      "Salt Spray Test": "1000+ hours without white/red rust",
-      "Laser Piercing": "Zero taper ultra-clean holes"
+      "Weld Processes": "MIG (GMAW), TIG (GTAW), Stick (SMAW), FCAW",
+      "Materials": "Carbon Steel, Stainless Steel, Aluminum Alloys",
+      "Testing": "Visual (VT), Dye Penetrant (PT), Ultrasonic (UT)",
+      "Compliance": "AWS D1.1 Structural Welding Code"
     }
   }
 ];

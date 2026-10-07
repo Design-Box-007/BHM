@@ -38,21 +38,21 @@ export const Button: React.FC<ButtonProps> = ({
   const baseClasses = "group relative inline-flex items-center justify-center gap-2.5 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 rounded-[5px] select-none cursor-pointer overflow-hidden";
 
   const variantClasses = {
-    primary: "border border-white/30 text-white hover:border-[#ffb400] hover:text-[#ffb400] bg-white/5 hover:bg-white/10 backdrop-blur-xs",
-    secondary: "border border-[#030716]/20 text-[#030716] hover:border-[#030716] hover:bg-[#030716] hover:text-white bg-transparent",
-    'dark-border': "border border-[#030716]/20 text-[#030716] hover:bg-[#030716] hover:text-white hover:border-[#030716] bg-transparent",
-    white: "border border-white bg-white text-[#030716] hover:bg-[#ffb400] hover:border-[#ffb400] hover:text-[#030716]",
-    outline: "border border-white/20 text-white hover:border-white hover:bg-white hover:text-[#030716] bg-transparent",
-    text: "border-transparent text-white hover:text-[#ffb400] p-0 gap-1.5",
+    primary: "border border-white/30 text-white hover:border-white hover:text-[#204268] hover:bg-white bg-white/10 backdrop-blur-xs",
+    secondary: "border border-[#204268]/30 text-[#204268] hover:border-[#204268] hover:bg-[#204268] hover:text-white bg-transparent",
+    'dark-border': "border border-[#204268]/30 text-[#204268] hover:bg-[#204268] hover:text-white hover:border-[#204268] bg-transparent",
+    white: "border border-white bg-white text-[#204268] hover:bg-white/90 hover:border-white hover:text-[#204268] shadow-sm",
+    outline: "border border-white/30 text-white hover:border-white hover:bg-white hover:text-[#204268] bg-transparent",
+    text: "border-transparent text-white hover:text-white/80 p-0 gap-1.5",
   };
 
   const dotClasses = {
-    primary: "bg-[#fcf8f2] group-hover:bg-[#ffb400]",
-    secondary: "bg-[#030716] group-hover:bg-white",
-    'dark-border': "bg-[#030716] group-hover:bg-white",
-    white: "bg-[#030716] group-hover:bg-[#030716]",
-    outline: "bg-white group-hover:bg-[#030716]",
-    text: "bg-[#ffb400]",
+    primary: "bg-white group-hover:bg-[#204268]",
+    secondary: "bg-[#204268] group-hover:bg-white",
+    'dark-border': "bg-[#204268] group-hover:bg-white",
+    white: "bg-[#204268] group-hover:bg-[#204268]",
+    outline: "bg-white group-hover:bg-[#204268]",
+    text: "bg-white",
   };
 
   const content = (

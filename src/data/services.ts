@@ -28,235 +28,339 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: "structural-welding",
-    number: "01",
-    title: "Structural welding",
-    category: "Heavy Engineering",
-    headline: "High-strength, code-compliant welding engineered for durability and safety every weld is executed.",
-    description: "Certified full-penetration welding for high-load commercial, industrial, and civil infrastructure. Our AWS D1.1 certified welders ensure every joint meets stringent ultrasonic and X-ray non-destructive testing benchmarks.",
-    details: "From high-rise structural skeletons and seismic retrofitting to multi-span bridge assemblies, we engineer robust steel connections capable of withstanding dynamic tectonic and environmental loads.",
-    image: "https://cdn.prod.website-files.com/69b9179f6eb9ffdf4069e938/6a05bba310af0e29540ec79f_Structural%20welding.png",
-    secondaryImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1000&q=80",
-    tags: ["Precision", "Heavy-Duty", "Fast Response"],
-    serviceUsDescription: "We provide expert structural welding services designed to deliver strength, safety, and precision in every project. From steel frameworks and beams to heavy-duty structures.",
-    serviceUsBullets: [
-      "Beam & Column welding",
-      "Steel frame assembly",
-      "Heavy-duty structural repairs",
-      "Seismic retrofitting & bracing",
-      "On-site crane & bridge assembly",
-      "Full penetration groove welds"
-    ],
-    steps: [
-      {
-        number: "Step 01",
-        title: "Consultation",
-        description: "We review your project requirements, technical drawings, engineering specifications, and load criteria."
-      },
-      {
-        number: "Step 02",
-        title: "Material preparation",
-        description: "Our team prepares certified welding procedures (WPS), bevels joint surfaces, and preheats base steel."
-      },
-      {
-        number: "Step 03",
-        title: "Welding execution",
-        description: "Certified welders perform the welding process using advanced FCAW/SMAW methods with full NDT inspection."
-      }
-    ],
-    whyChooseBullets: [
-      "Certified & Skilled welders (AWS D1.1)",
-      "Industrial-grade equipment & tooling",
-      "Strict safety & OSHA compliance",
-      "On-time project completion guarantee",
-      "Heavy industrial facility capacity",
-      "100% ultrasonic non-destructive testing"
-    ],
-    capabilities: [
-      "Certified structural fabrication",
-      "Heavy-duty infrastructure",
-      "On-Site precision assembly",
-      "Custom metal solutions"
-    ],
-    specs: [
-      { label: "Weld Codes", value: "AWS D1.1, D1.5 / EN 1090-2" },
-      { label: "Steel Grades", value: "A36, A572, A992, Hardox 450" },
-      { label: "Testing Methods", value: "UT, MT, PT, RT Non-Destructive" },
-      { label: "Capacity", value: "Single-span assemblies up to 60 Tons" }
-    ]
-  },
-  {
     id: "metal-fabrication",
-    number: "02",
-    title: "Metal fabrication",
-    category: "Precision Manufacturing",
-    headline: "Custom metal fabrication services including cutting, bending, assembling, and finishing.",
-    description: "Equipped with state-of-the-art 12kW fiber lasers, 350-ton CNC press brakes, and 5-axis machining stations to turn raw sheet metal and structural plate into turnkey mechanical components with tight tolerances.",
-    details: "We support both rapid single-unit prototyping and high-throughput production runs with automated nesting, repeatable precision, and turnkey surface passivation or powder coating.",
-    image: "https://cdn.prod.website-files.com/69b9179f6eb9ffdf4069e938/6a05bbae8b2b4040e772c997_Metal%20fabrication.png",
+    number: "01",
+    title: "Metal Fabrication",
+    category: "Custom Fabrication",
+    headline: "Custom Metal Fabrication",
+    description: "Precision-engineered metal fabrication solutions combining cutting, forming, bending, welding, and assembly to produce durable components for industrial, commercial, and architectural applications.",
+    details: "From cutting and forming to certified welding and surface finishing, every project is engineered with structural integrity, dimensional accuracy, safety, and long-term durability in mind.",
+    image: "/images/service-metal-fabrication.jpg",
     secondaryImage: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80",
-    tags: ["CNC Precision", "Laser Cutting", "Custom Forming"],
-    serviceUsDescription: "We provide comprehensive metal fabrication solutions designed to deliver unmatched precision, structural integrity, and repeatability across industrial sheet metal and plate components.",
+    tags: ["Custom Fabrication", "Precision", "Heavy-Duty"],
+    serviceUsDescription: "Precision-engineered metal fabrication solutions combining cutting, forming, bending, welding, and assembly to produce durable components for industrial, commercial, and architectural applications.",
     serviceUsBullets: [
-      "Fiber laser profiling up to 50mm",
-      "CNC 350-ton multi-axis bending",
-      "Automated robotic seam welding",
-      "Turnkey mechanical finishing",
-      "Sheet metal enclosure manufacturing",
-      "Surface passivation & powder coating"
+      "Structural steel fabrication",
+      "Custom metal components",
+      "Precision cutting & forming",
+      "MIG, TIG & ARC welding"
     ],
     steps: [
       {
         number: "Step 01",
-        title: "CAD Modeling & Nesting",
-        description: "Our engineering team reviews 3D models and optimizes material utilization through automated nesting algorithms."
+        title: "Engineering & Material Selection",
+        description: "We review technical drawings, specifications, and select optimal metal grades."
       },
       {
         number: "Step 02",
-        title: "Precision Cutting & Bending",
-        description: "High-power fiber lasers slice components with micron precision before CNC press brakes bend to exact angles."
+        title: "Cutting, Forming & Assembly",
+        description: "Precision cutting and forming followed by certified welding and fit-up."
       },
       {
         number: "Step 03",
-        title: "Assembly & Surface Finishing",
-        description: "Craftsmen weld, dress, deburr, and apply protective industrial coatings for long-term corrosion resistance."
+        title: "Finishing & Quality Inspection",
+        description: "Final quality checks, surface dressing, and comprehensive dimensional verification."
       }
     ],
     whyChooseBullets: [
-      "±0.05 mm precision laser tolerances",
-      "Automated high-throughput CNC machinery",
-      "Rapid turnaround on custom prototypes",
-      "Full material mill test reports (MTR)",
-      "Turnkey surface powder coating & plating",
-      "ISO 9001:2015 quality certified workflows"
+      "Custom fabrication to exact project drawings",
+      "Skilled craftsmen & certified welders",
+      "Modern CNC equipment & forming machinery",
+      "High dimensional accuracy & structural integrity",
+      "Strict safety and quality standards",
+      "Turnkey delivery across the UAE"
     ],
     capabilities: [
-      "Precision laser & plasma cutting",
-      "CNC bending & metal forming",
-      "Full-scale structural assembly",
-      "Surface treatment & finishing"
+      "Structural steel fabrication",
+      "Custom metal components",
+      "Precision cutting & forming",
+      "MIG, TIG & ARC welding"
     ],
     specs: [
-      { label: "Tolerance", value: "±0.05 mm (Laser & CNC)" },
-      { label: "Max Plate Thickness", value: "Up to 50mm Carbon / 30mm Stainless" },
-      { label: "Forming Length", value: "4.2m continuous CNC bend length" },
-      { label: "Finishing", value: "Anodizing, E-coat, Zinc, Blast Sa 2.5" }
+      { label: "Capabilities", value: "Cutting, Bending, Welding, Assembly" },
+      { label: "Materials", value: "Carbon Steel, Stainless Steel, Aluminum" },
+      { label: "Quality Control", value: "100% Dimensional & Visual Inspection" },
+      { label: "Standards", value: "AWS / ISO Compliant Fabrication" }
     ]
   },
   {
-    id: "pipe-welding",
+    id: "metal-cutting",
+    number: "02",
+    title: "Metal Cutting",
+    category: "Precision Cutting",
+    headline: "Precision Metal Cutting",
+    description: "High-accuracy metal cutting services using advanced machinery to achieve clean edges, precise dimensions, and consistent results across structural and custom fabrication projects.",
+    details: "Equipped with modern CNC plasma, laser, and precision sawing machinery to cut plates, sheets, tubes, and structural sections with minimal kerf and tight tolerances.",
+    image: "/images/service-metal-cutting.jpg",
+    secondaryImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80",
+    tags: ["CNC Laser", "Plasma Cutting", "Clean Edge"],
+    serviceUsDescription: "High-accuracy metal cutting services using advanced machinery to achieve clean edges, precise dimensions, and consistent results across structural and custom fabrication projects.",
+    serviceUsBullets: [
+      "CNC plasma & laser cutting",
+      "Precision dimensional cutting",
+      "Steel plate & section cutting",
+      "Clean-edge preparation"
+    ],
+    steps: [
+      {
+        number: "Step 01",
+        title: "CAD File Import & Nesting",
+        description: "Importing CAD drawings into automated nesting software for maximum yield."
+      },
+      {
+        number: "Step 02",
+        title: "High-Precision Cutting",
+        description: "CNC plasma or laser cutting with controlled speeds and clean kerf profiles."
+      },
+      {
+        number: "Step 03",
+        title: "Edge Dressing & Deburring",
+        description: "Removal of dross and micro-burrs for ready-to-weld or ready-to-assemble edges."
+      }
+    ],
+    whyChooseBullets: [
+      "Tight dimensional tolerances and repeatable accuracy",
+      "Clean-edge preparation minimizing secondary grinding",
+      "Handles heavy steel plates and thin gauge sheets",
+      "Optimized nesting for cost efficiency",
+      "Rapid turnaround on urgent cutting requirements",
+      "Comprehensive material traceability"
+    ],
+    capabilities: [
+      "CNC plasma & laser cutting",
+      "Precision dimensional cutting",
+      "Steel plate & section cutting",
+      "Clean-edge preparation"
+    ],
+    specs: [
+      { label: "Technology", value: "CNC Fiber Laser & High-Definition Plasma" },
+      { label: "Cutting Capacity", value: "Up to 50mm plate thickness" },
+      { label: "Accuracy", value: "±0.1 mm precision" },
+      { label: "Profile Types", value: "Plates, Pipes, Tubes, Channels, Beams" }
+    ]
+  },
+  {
+    id: "blasting-coating",
     number: "03",
-    title: "Pipe welding",
-    category: "Pressure & Process Systems",
-    headline: "Precision pipe welding for industrial systems, utilities, and process piping with strict quality.",
-    description: "ASME Section IX and API 1104 certified orbital and open-root pipe welding. Delivering continuous, slag-free, full-penetration joints across complex cryogenic and high-temperature piping networks.",
-    details: "We specialize in challenging metallurgy including duplex stainless, titanium, Inconel 625, chrome-moly alloys, and high-purity pharmaceutical stainless tubing.",
-    image: "https://cdn.prod.website-files.com/69b9179f6eb9ffdf4069e938/6a05bbbaf8a7539b8d66091f_Pipe%20welding.png",
-    secondaryImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=80",
-    tags: ["High-Pressure", "ASME Certified", "Orbital TIG"],
-    serviceUsDescription: "We deliver certified high-pressure pipe welding for critical petrochemical, process chemical, energy, and pharmaceutical infrastructure requiring zero-leak reliability.",
+    title: "Blasting & Coating",
+    category: "Surface Treatment",
+    headline: "Industrial Blasting & Protective Coating",
+    description: "Professional surface preparation and protective coating solutions designed to remove contaminants, improve surface adhesion, and protect fabricated steel against corrosion and environmental exposure.",
+    details: "Surface preparation to Swedish SA 2.5 standard followed by multi-layer epoxy, polyurethane, or thermal protective coatings for marine, industrial, and outdoor steel structures.",
+    image: "/images/service-blasting-coating.jpg",
+    secondaryImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80",
+    tags: ["Abrasive Blasting", "Anti-Corrosion", "Protective Coating"],
+    serviceUsDescription: "Professional surface preparation and protective coating solutions designed to remove contaminants, improve surface adhesion, and protect fabricated steel against corrosion and environmental exposure.",
     serviceUsBullets: [
-      "ASME Section IX pressure piping",
-      "Orbital TIG sanitary tubing",
-      "Cryogenic & high-temperature lines",
-      "Duplex stainless & Inconel welding",
-      "API 1104 pipeline tie-ins",
-      "Zero-defect root pass purging"
+      "Abrasive & shot blasting",
+      "Surface preparation & profiling",
+      "Anti-corrosion coating",
+      "Industrial protective coatings"
     ],
     steps: [
       {
         number: "Step 01",
-        title: "P&ID Schematic Review",
-        description: "We analyze piping schematics, pressure class specifications, and thermal expansion parameters."
+        title: "Surface Inspection & Masking",
+        description: "Assessment of base metal and precision masking of machined faces."
       },
       {
         number: "Step 02",
-        title: "Fit-Up & Purge Control",
-        description: "Pipe ends are prepped, clamped with laser alignment, and backed by ultra-pure inert gas shielding."
+        title: "Abrasive Grit / Shot Blasting",
+        description: "Blasting to SA 2.5 profile for maximum coating adhesion and anchor pattern."
       },
       {
         number: "Step 03",
-        title: "GTAW/SMAW Root & Cap",
-        description: "Master pipe welders deposit continuous full-penetration passes followed by 100% hydrostatic pressure testing."
+        title: "Protective Primer & Topcoat",
+        description: "Controlled application of zinc-rich primers, epoxy barrier, and polyurethane topcoats."
       }
     ],
     whyChooseBullets: [
-      "ASME Sec IX & API 1104 certified welders",
-      "Hydrostatic pressure testing to 2500#",
-      "Ultra-pure Argon purge control (<10ppm O2)",
-      "Sanitary food & pharma polish finishes",
-      "100% radiographic weld inspection",
-      "24/7 emergency plant shutdown support"
+      "Industrial abrasive & shot blasting to ISO/SSPC standards",
+      "Multi-coat anti-corrosion protection for harsh environments",
+      "Controlled climate coating booths ensuring optimal curing",
+      "Dry film thickness (DFT) verification and adhesion testing",
+      "Extended service life for outdoor and industrial steelwork",
+      "Eco-friendly compliant disposal and containment"
     ],
     capabilities: [
-      "High-strength structural welding",
-      "Specialized alloy fabrication",
-      "Reliable structural welding",
-      "Iterative design support"
+      "Abrasive & shot blasting",
+      "Surface preparation & profiling",
+      "Anti-corrosion coating",
+      "Industrial protective coatings"
     ],
     specs: [
-      { label: "Certifications", value: "ASME Sec IX, API 1104, B31.3" },
-      { label: "Diameters", value: "1/4\" sanitary tube to 48\" heavy wall" },
-      { label: "Purge Control", value: "Ultra-pure Argon trailing shields (<10ppm O2)" },
-      { label: "Pressure Rating", value: "Rated up to Class 2500#" }
+      { label: "Blasting Standard", value: "SA 2.5 / SSPC-SP 10 Near-White" },
+      { label: "Coating Types", value: "Zinc Primer, Epoxy, Polyurethane, Polyaspartic" },
+      { label: "Inspection", value: "DFT Gauge, Cross-Hatch Adhesion, Holiday Test" },
+      { label: "Environment", value: "C3, C4, C5-M Marine Grade Systems" }
     ]
   },
   {
-    id: "custom-fabrication",
+    id: "cnc-machining",
     number: "04",
-    title: "Custom fabrication",
-    category: "Bespoke Engineering",
-    headline: "Tailor-made welding solutions designed for unique project requirements and rapid prototyping.",
-    description: "When standard catalogs don't have the answer, our CAD engineers and master craftsmen collaborate with architects and industrial designers to build one-of-a-kind structural showpieces and rugged production tooling.",
-    details: "From monumental spiral architectural staircases and architectural bronze cladding to specialized automated factory skids and subsea test fixtures.",
-    image: "https://cdn.prod.website-files.com/69b9179f6eb9ffdf4069e938/6a05bbdb8de018b73041e6b7_Custom%20Welding%20Projects.png",
-    secondaryImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80",
-    tags: ["Bespoke Design", "Prototyping", "Specialty Alloys"],
-    serviceUsDescription: "We engineer bespoke fabrication solutions tailored to unique architectural visions, prototype validation, and custom industrial machinery requirements.",
+    title: "CNC Machining",
+    category: "Precision Machining",
+    headline: "Precision CNC Machining",
+    description: "Advanced CNC machining services for producing complex metal components with tight tolerances, repeatable accuracy, and consistent dimensional quality for demanding engineering applications.",
+    details: "Utilizing modern multi-axis CNC milling, turning centers, and precision boring tools to produce complex mechanical parts, flanges, shafts, and custom fixtures.",
+    image: "/images/service-cnc-machining.jpg",
+    secondaryImage: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80",
+    tags: ["CNC Milling", "CNC Turning", "Tight Tolerance"],
+    serviceUsDescription: "Advanced CNC machining services for producing complex metal components with tight tolerances, repeatable accuracy, and consistent dimensional quality for demanding engineering applications.",
     serviceUsBullets: [
-      "Custom architectural steelwork",
-      "Specialty alloy metallurgy (Titanium/Monel)",
-      "Rapid prototype engineering",
-      "Heavy machinery skids & frames",
-      "Subsea & test fixture enclosures",
-      "Bespoke one-off installations"
+      "CNC turning & milling",
+      "Tight-tolerance machining",
+      "Complex component manufacturing",
+      "Precision drilling & finishing"
     ],
     steps: [
       {
         number: "Step 01",
-        title: "Concept & FEA Analysis",
-        description: "We collaborate on 3D CAD modeling, stress analysis, and custom alloy selection."
+        title: "CAM Programming & Simulation",
+        description: "Generating multi-axis toolpaths and verifying clearance simulations in CAM."
       },
       {
         number: "Step 02",
-        title: "Prototyping & Custom Jigs",
-        description: "Specialized welding fixtures and modular jigs are fabricated to guarantee repeatable precision."
+        title: "Precision Machining Execution",
+        description: "Multi-axis milling and turning using high-performance carbide tooling."
       },
       {
         number: "Step 03",
-        title: "Artisanal Fabrication & Assembly",
-        description: "Our craftsmen shape, weld, grind, and hand-finish every bespoke element to perfection."
+        title: "Metrology & CMM Inspection",
+        description: "Rigorous dimensional verification and surface roughness testing."
       }
     ],
     whyChooseBullets: [
-      "ISO 9001:2015 certified fabrication shop",
-      "Dedicated senior project engineering lead",
-      "Exotic & non-ferrous alloy expertise",
-      "Rapid 72-hour prototyping turnaround",
-      "Museum-grade architectural finishes",
-      "Full turnkey assembly & on-site delivery"
+      "Tight-tolerance multi-axis CNC milling and turning",
+      "Repeatable accuracy for both prototypes and batch production",
+      "High surface finish quality and intricate geometric capabilities",
+      "Experienced machinists and metrology engineers",
+      "Full material certification and inspection reports",
+      "Fast production turnaround times"
     ],
     capabilities: [
-      "Custom concept development",
-      "Specialized alloy fabrication",
-      "Precision prototype assembly",
-      "Tailored fabrication"
+      "CNC turning & milling",
+      "Tight-tolerance machining",
+      "Complex component manufacturing",
+      "Precision drilling & finishing"
     ],
     specs: [
-      { label: "Supported Formats", value: "STEP, IGES, SolidWorks, DWG" },
-      { label: "Materials", value: "Aluminum, Corten, Monel, Hastelloy" },
-      { label: "Lead Time", value: "Rapid prototype delivery in 72 hours" },
-      { label: "Quality Standard", value: "ISO 9001:2015 Certified Workflow" }
+      { label: "Machining Accuracy", value: "±0.01 mm tolerance" },
+      { label: "Machining Types", value: "3-Axis & 4-Axis CNC Milling, Turning, Boring" },
+      { label: "Materials", value: "Steel, Stainless, Aluminum, Brass, Bronze" },
+      { label: "Inspection", value: "Micrometers, Bore Gauges, CMM Metrology" }
+    ]
+  },
+  {
+    id: "interior-home-decor",
+    number: "05",
+    title: "Interior & Home Décor",
+    category: "Architectural & Bespoke",
+    headline: "Custom Metalwork for Interiors",
+    description: "Bespoke metal fabrication for interiors, furniture, architectural features, and home décor, combining precision manufacturing with refined finishes and contemporary design requirements.",
+    details: "Specialized in luxury metal accents, custom room dividers, architectural handrails, metal table bases, brass/bronze detailing, and bespoke residential/commercial interior installations.",
+    image: "/images/service-interior-decor.jpg",
+    secondaryImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80",
+    tags: ["Bespoke Interior", "Architectural Metal", "Decor"],
+    serviceUsDescription: "Bespoke metal fabrication for interiors, furniture, architectural features, and home décor, combining precision manufacturing with refined finishes and contemporary design requirements.",
+    serviceUsBullets: [
+      "Custom metal furniture",
+      "Architectural metalwork",
+      "Decorative metal elements",
+      "Partitions, frames & fixtures"
+    ],
+    steps: [
+      {
+        number: "Step 01",
+        title: "Design Concept & CAD Detailing",
+        description: "Working with interior designers and architects to develop fabrication drawings."
+      },
+      {
+        number: "Step 02",
+        title: "Artisanal Metal Fabrication",
+        description: "Handcrafted forming, seamless tig welding, and fine seam polishing."
+      },
+      {
+        number: "Step 03",
+        title: "Custom Finish & On-Site Fit-Out",
+        description: "Application of powder coating, brushed brass, or patina followed by installation."
+      }
+    ],
+    whyChooseBullets: [
+      "Bespoke designs tailored to architectural drawings",
+      "High-end finishes (matte black, brushed gold, brass, antique patina)",
+      "Seamless welded corners and invisible fasteners",
+      "Collaborative approach with architects and interior designers",
+      "Durable premium materials built to last",
+      "On-site installation and fitting across UAE"
+    ],
+    capabilities: [
+      "Custom metal furniture",
+      "Architectural metalwork",
+      "Decorative metal elements",
+      "Partitions, frames & fixtures"
+    ],
+    specs: [
+      { label: "Products", value: "Furniture, Screens, Partitions, Handrails, Cladding" },
+      { label: "Finishes", value: "Powder Coat, PVD, Electroplate, Brushed, Patina" },
+      { label: "Materials", value: "Stainless Steel 304/316, Mild Steel, Brass, Aluminum" },
+      { label: "Applications", value: "Luxury Residential, Hospitality, Retail, Offices" }
+    ]
+  },
+  {
+    id: "welding-services",
+    number: "06",
+    title: "Welding Services",
+    category: "Precision Welding",
+    headline: "Precision Welding Solutions",
+    description: "High-performance welding services engineered for structural integrity, dimensional accuracy, and long-term durability across industrial, construction, commercial, and custom fabrication projects.",
+    details: "Comprehensive welding capabilities spanning MIG (GMAW), TIG (GTAW), Stick (SMAW), and Flux-Cored (FCAW) welding for heavy structural joints, pressure lines, and machinery assemblies.",
+    image: "/images/service-welding-services.jpg",
+    secondaryImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1000&q=80",
+    tags: ["MIG/TIG/ARC", "Structural Welding", "Heavy-Duty"],
+    serviceUsDescription: "High-performance welding services engineered for structural integrity, dimensional accuracy, and long-term durability across industrial, construction, commercial, and custom fabrication projects.",
+    serviceUsBullets: [
+      "MIG, TIG & ARC welding",
+      "Structural steel welding",
+      "Heavy-duty fabrication",
+      "On-site welding & assembly"
+    ],
+    steps: [
+      {
+        number: "Step 01",
+        title: "Joint Design & Weld Procedure",
+        description: "Preparation of joint bevels and selection of certified welding procedure specifications."
+      },
+      {
+        number: "Step 02",
+        title: "Precision Welding Execution",
+        description: "Execution by qualified welders using MIG, TIG, or ARC methods with strict heat control."
+      },
+      {
+        number: "Step 03",
+        title: "NDT & Quality Certification",
+        description: "Visual, ultrasonic, and penetrant testing to ensure 100% defect-free welds."
+      }
+    ],
+    whyChooseBullets: [
+      "Certified welders with deep expertise in MIG, TIG & ARC methods",
+      "Full penetration welding for heavy structural integrity",
+      "Mobile welding rigs available for on-site installation and repairs",
+      "Strict compliance with AWS D1.1 and international codes",
+      "100% quality inspection and NDT testing capability",
+      "Fast response for urgent industrial welding needs"
+    ],
+    capabilities: [
+      "MIG, TIG & ARC welding",
+      "Structural steel welding",
+      "Heavy-duty fabrication",
+      "On-site welding & assembly"
+    ],
+    specs: [
+      { label: "Weld Processes", value: "MIG (GMAW), TIG (GTAW), Stick (SMAW), FCAW" },
+      { label: "Materials", value: "Carbon Steel, Stainless Steel, Aluminum Alloys" },
+      { label: "Testing", value: "Visual (VT), Dye Penetrant (PT), Ultrasonic (UT)" },
+      { label: "Compliance", value: "AWS D1.1 Structural Welding Code" }
     ]
   }
 ];

@@ -3,7 +3,7 @@ export interface SiteConfig {
   tagline: string;
   heroHeadline: string;
   heroSubtext: string;
-  established: string;
+  // established: string;
   yearsExperience: number;
   rating: string;
   ratingCount: number;
@@ -37,18 +37,18 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "FORGEON",
-  tagline: "Precision Welding & Metal Fabrication",
-  heroHeadline: "Precision welding solutions",
-  heroSubtext: "We deliver high-performance welding and fabrication services designed to meet the rigorous demands of modern industrial projects. Built with absolute focus on structural integrity, strict safety, and unyielding durability.",
-  established: "Since 2015",
+  name: "BHM",
+  tagline: "Your all-in-one structural bonding partner",
+  heroHeadline: "Precision Steel Fabrication & Welding Solutions",
+  heroSubtext: "We deliver high-performance steel fabrication, precision welding, and custom metalworking solutions built for demanding industrial, commercial, and architectural applications. From cutting and forming to welding and finishing, every project is engineered with structural integrity, dimensional accuracy, safety, and long-term durability in mind.",
+  // established: "Since 2015",
   yearsExperience: 10,
   rating: "4.9/5",
   ratingCount: 148,
   phone: "+1 (800) 582-9353",
   phoneRaw: "+18005829353",
-  email: "info@forgeon-industries.com",
-  supportEmail: "support@forgeon-industries.com",
+  email: "info@bhm-bonding.com",
+  supportEmail: "support@bhm-bonding.com",
   address: {
     street: "71–75 Shelton Street, Covent Garden",
     city: "London",
@@ -63,14 +63,14 @@ export const siteConfig: SiteConfig = {
     sunday: "Sunday: Closed (Emergency Hotline Active)",
   },
   socials: [
-    { name: "Facebook", href: "https://facebook.com", handle: "@forgeon.welding" },
-    { name: "Instagram", href: "https://instagram.com", handle: "@forgeon_precision" },
-    { name: "LinkedIn", href: "https://linkedin.com", handle: "forgeon-industries" },
-    { name: "Twitter", href: "https://x.com", handle: "@forgeon_metal" },
+    { name: "Facebook", href: "https://facebook.com", handle: "@bhm.bonding" },
+    { name: "Instagram", href: "https://instagram.com", handle: "@bhm_structural" },
+    { name: "LinkedIn", href: "https://linkedin.com", handle: "bhm-bonding" },
+    { name: "Twitter", href: "https://x.com", handle: "@bhm_bonding" },
   ],
   stats: [
     { value: "10+", label: "Years of Experience" },
-    { value: "99.8%", label: "Weld Integrity Rate" },
+    { value: "99.8%", label: "Bond Integrity Rate" },
     { value: "650+", label: "Industrial Projects" },
     { value: "100%", label: "OSHA & AWS Compliance" },
   ],

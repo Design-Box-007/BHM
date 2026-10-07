@@ -4,7 +4,7 @@ import { AboutHero } from '../sections/about/AboutHero';
 import { CompanyStory } from '../sections/about/CompanyStory';
 import { MissionVision } from '../sections/about/MissionVision';
 import { WhyChooseUs } from '../sections/about/WhyChooseUs';
-import { CTA } from '../sections/home/CTA';
+import { AboutFAQ } from '../sections/about/AboutFAQ';
 import { animatePageIn } from '../animations/pageTransitions';
 
 export const About: React.FC = () => {
@@ -20,13 +20,13 @@ export const About: React.FC = () => {
     <div ref={pageRef} className="w-full">
       <SEO
         title="About Us — Engineering Heritage & Standards"
-        description="Learn about Forgeon's decade of metallurgical mastery, certified AWS/ASME quality systems, and state-of-the-art metal fabrication facility."
+        description="Learn about BHM's decade of engineering mastery, certified quality standards, and state-of-the-art structural bonding and fabrication facility."
       />
       <AboutHero />
       <CompanyStory />
       <MissionVision />
       <WhyChooseUs />
-      <CTA />
+      <AboutFAQ />
     </div>
   );
 };

@@ -31,9 +31,9 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   };
 
   const titleSizes = {
-    normal: 'text-3xl md:text-4xl lg:text-5xl font-semibold',
-    large: 'text-4xl md:text-5xl lg:text-6xl font-bold',
-    giant: 'text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold uppercase font-display tracking-tight leading-none',
+    normal: 'text-2xl md:text-3xl lg:text-4xl font-semibold',
+    large: 'text-3xl md:text-4xl lg:text-5xl font-bold',
+    giant: 'text-4xl md:text-5xl lg:text-6xl font-bold uppercase font-display tracking-tight leading-tight',
   };
 
   return (
@@ -42,7 +42,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         <div className="mb-3.5 flex items-center gap-2">
           <span className={clsx(
             'text-xs font-semibold uppercase tracking-wider',
-            isDark ? 'text-[#ffb400]' : 'text-[#686e86]'
+            isDark ? 'text-white/80' : 'text-[#204268]/80'
           )}>
             {pretitle}
           </span>
@@ -51,15 +51,18 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
 
       <div className="relative inline-block">
         <h2 className={clsx(
-          'transition-colors duration-300',
+          'transition-colors duration-300 font-display',
           titleSizes[size],
-          isDark ? 'text-white' : 'text-[#030716]'
+          isDark ? 'text-white' : 'text-[#204268]'
         )}>
           {title}
         </h2>
 
         {badge && (
-          <span className="absolute -top-3.5 -right-3 md:-top-5 md:-right-8 inline-block px-3 py-1 bg-[#ffb400] text-[#030716] text-[11px] md:text-xs font-bold uppercase tracking-wider rounded-[6px] shadow-lg transform -rotate-10 select-none z-10">
+          <span className={clsx(
+            "absolute -top-3.5 -right-3 md:-top-5 md:-right-8 inline-block px-3 py-1 text-[11px] md:text-xs font-bold uppercase tracking-wider rounded-[6px] shadow-lg transform -rotate-10 select-none z-10",
+            isDark ? "bg-white text-[#204268]" : "bg-[#204268] text-white"
+          )}>
             {badge}
           </span>
         )}
@@ -67,8 +70,8 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
 
       {description && (
         <p className={clsx(
-          'mt-5 max-w-2xl text-base md:text-lg leading-relaxed font-normal',
-          isDark ? 'text-[#bfbfbf]' : 'text-[#686e86]'
+          'mt-5 max-w-2xl text-sm md:text-base leading-relaxed font-normal',
+          isDark ? 'text-white/80' : 'text-[#204268]/80'
         )}>
           {description}
         </p>

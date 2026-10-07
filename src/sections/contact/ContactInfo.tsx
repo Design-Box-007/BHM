@@ -32,14 +32,14 @@ export const ContactInfo: React.FC = () => {
     {
       icon: Clock,
       title: 'Operating Hours',
-      label: 'Workshop & Fabrication Floor',
+      label: 'Workshop & Floor',
       value: siteConfig.businessHours.weekdays,
       subtext: siteConfig.businessHours.saturday,
     },
   ];
 
   return (
-    <section className="py-20 bg-[#030716] border-b border-white/10">
+    <section className="py-20 bg-[#204268] border-b border-white/10 font-sans">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {infoCards.map((card, idx) => {
@@ -47,13 +47,13 @@ export const ContactInfo: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="p-8 rounded-[10px] bg-[#101836]/40 border border-white/10 flex flex-col justify-between hover:border-[#ffb400]/40 transition-all duration-300 shadow-xl"
+                className="p-8 rounded-[10px] bg-white/5 border border-white/10 flex flex-col justify-between hover:border-white/40 transition-all duration-300 shadow-xl"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-[6px] bg-white/5 border border-white/10 text-[#ffb400] flex items-center justify-center mb-6">
+                  <div className="w-10 h-10 rounded-[6px] bg-white/10 border border-white/15 text-white flex items-center justify-center mb-6">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#bfbfbf] block mb-1">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-white/60 block mb-1">
                     {card.label}
                   </span>
                   <h3 className="text-xl font-display font-bold uppercase text-white mb-2">
@@ -62,18 +62,18 @@ export const ContactInfo: React.FC = () => {
                   {card.action ? (
                     <a
                       href={card.action}
-                      className="text-sm font-medium text-white hover:text-[#ffb400] transition-colors leading-relaxed block"
+                      className="text-sm font-medium text-white/90 hover:text-white transition-colors leading-relaxed block"
                     >
                       {card.value}
                     </a>
                   ) : (
-                    <p className="text-sm font-medium text-white leading-relaxed">
+                    <p className="text-sm font-medium text-white/90 leading-relaxed">
                       {card.value}
                     </p>
                   )}
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/10 text-[11px] text-[#bfbfbf]">
+                <div className="mt-6 pt-4 border-t border-white/10 text-[11px] text-white/60">
                   {card.subtext}
                 </div>
               </div>

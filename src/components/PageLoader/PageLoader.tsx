@@ -50,31 +50,31 @@ export const PageLoader: React.FC = () => {
   return (
     <div
       ref={loaderRef}
-      className="fixed inset-0 z-[9999] flex flex-col justify-between p-8 md:p-14 bg-[#030716] text-white"
+      className="fixed inset-0 z-[9999] flex flex-col justify-between p-8 md:p-14 bg-[#204268] text-white"
     >
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <div className="w-4 h-4 bg-[#ffb400] rounded-[3px]" />
-          <span className="font-display text-lg tracking-wider font-bold">FORGEON</span>
+          <div className="w-4 h-4 bg-white rounded-[3px]" />
+          <span className="font-display text-lg tracking-wider font-bold">BHM</span>
         </div>
-        <span className="text-xs uppercase tracking-widest text-[#bfbfbf]">
-          PRECISION INDUSTRIAL SYSTEMS
+        <span className="text-xs uppercase tracking-widest text-white/70">
+          STRUCTURAL BONDING PARTNER
         </span>
       </div>
 
       <div className="flex flex-col items-center justify-center text-center my-auto">
-        <div className="text-8xl md:text-[140px] font-display font-bold text-white tracking-tight leading-none">
+        <div className="text-6xl md:text-8xl lg:text-9xl font-display font-bold text-white tracking-tight leading-none">
           {percent}%
         </div>
-        <div className="w-48 h-[2px] bg-white/10 mt-6 overflow-hidden rounded-full">
+        <div className="w-48 h-[2px] bg-white/20 mt-6 overflow-hidden rounded-full">
           <div
-            className="h-full bg-[#ffb400] transition-all duration-150 ease-out"
+            className="h-full bg-white transition-all duration-150 ease-out"
             style={{ width: `${percent}%` }}
           />
         </div>
       </div>
 
-      <div className="flex justify-between items-center text-xs text-[#bfbfbf] uppercase tracking-wider">
+      <div className="flex justify-between items-center text-xs text-white/70 uppercase tracking-wider">
         <span>EST. 2015</span>
         <span>STRUCTURAL INTEGRITY VERIFIED</span>
       </div>

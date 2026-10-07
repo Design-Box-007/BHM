@@ -52,12 +52,12 @@ export const AboutPreview: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-10 md:py-10 bg-white text-[#030716] border-b border-black/10">
+    <section className="py-10 sm:py-16 md:py-24 bg-white text-[#204268] border-b border-[#204268]/10">
       <Container>
         {/* Section Title */}
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-sans text-[#030716] leading-tight tracking-tight">
-            Delivering precision welding and metal fabrication solutions
+        <div className="max-w-3xl mb-6 sm:mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-[#204268] leading-tight tracking-tight">
+            About BHM Steels
           </h2>
         </div>
 
@@ -66,30 +66,30 @@ export const AboutPreview: React.FC = () => {
           {/* Column 1: Image (4.5 cols) */}
           <div className="lg:col-span-4 flex flex-col">
             <ImageReveal
-              src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80"
-              alt="Precision metal fabrication at Forgeon"
+              src="images/about-company-grinder.jpg"
+              alt="Precision metal fabrication at BHM"
               aspectRatio="aspect-[4/3] lg:aspect-auto"
               className="h-full min-h-[320px] rounded-[10px]"
             />
           </div>
 
           {/* Column 2: Counter & Rating Box (3.5 cols) */}
-          <div className="lg:col-span-3 flex flex-col justify-between p-8 rounded-[10px] bg-white">
+          <div className="lg:col-span-3 flex flex-col justify-between p-8 rounded-[10px] bg-white border border-[#204268]/15">
             <div>
               <div ref={counterRef} className="relative inline-flex items-start">
-                <span className="text-6xl sm:text-7xl font-sans text-[#030716] tracking-tight">
+                <span className="text-5xl sm:text-6xl font-display font-bold text-[#204268] tracking-tight">
                   {count}
                 </span>
-                <span className="text-3xl sm:text-4xl font-sans text-[#ffb400] ml-1 -mt-1 select-none">
+                <span className="text-2xl sm:text-3xl font-display font-bold text-[#204268] ml-1 -mt-1 select-none">
                   +
                 </span>
               </div>
-              <h3 className="mt-2 text-base font-semibold text-[#030716]">
+              <h3 className="mt-2 text-base font-semibold text-[#204268] font-sans">
                 Years of experience
               </h3>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-black/10">
+            <div className="mt-8 pt-6 border-t border-[#204268]/10">
               <div className="flex items-center -space-x-3 mb-3">
                 {avatars.map((avatar, idx) => (
                   <img
@@ -101,30 +101,28 @@ export const AboutPreview: React.FC = () => {
                 ))}
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex text-[#ffb400]">
+                <div className="flex text-[#204268]">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-[#ffb400]" />
+                    <Star key={i} className="w-3.5 h-3.5 fill-[#204268]" />
                   ))}
                 </div>
-                <span className="text-sm font-bold text-[#030716]">4.9 / 5</span>
+                <span className="text-sm font-bold text-[#204268]">4.9 / 5</span>
               </div>
             </div>
           </div>
 
-          {/* Column 3: Beige/Cream Editorial Statement Card (4.5 cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-between p-8 sm:p-10 rounded-[10px] bg-[#fcf8f2] border border-black/10 text-[#030716] shadow-sm">
+          {/* Column 3: Editorial Statement Card (4.5 cols) */}
+          <div className="lg:col-span-5 flex flex-col justify-between p-8 sm:p-10 rounded-[10px] bg-white border border-[#204268]/20 text-[#204268] shadow-sm">
             <div className="space-y-4">
-              <p className="text-sm sm:text-base leading-relaxed text-[#030716]/80">
-                At the core of our business is a commitment to{' '}
-                <strong className="text-[#030716] font-bold">
-                  structural integrity and meticulous detail.
-                </strong>{' '}
-                We understand that every weld matters, whether it’s a high-stakes industrial component or a bespoke{' '}
-                <strong className="text-[#030716] font-bold">design project. Our team leverages</strong> advanced techniques to guarantee perfection.
+              <p className="text-sm sm:text-base leading-relaxed text-[#204268]/80 font-sans">
+                BHM Steels delivers precision steel fabrication and metalworking solutions, combining skilled craftsmanship, modern technology, and strict quality standards to create durable solutions for industrial and commercial projects.
+              </p>
+              <p className="text-sm sm:text-base leading-relaxed text-[#204268]/80 font-sans">
+                BHM Steels combines precision fabrication, quality workmanship, and advanced metalworking capabilities to deliver reliable solutions for diverse project requirements. From cutting, bending, welding, and CNC machining to blasting and coating, we provide comprehensive services with a strong focus on accuracy and durability. Our expertise supports construction, industrial, manufacturing, commercial, and architectural projects across the UAE. With a safety-focused approach and custom fabrication based on project drawings, dimensions, materials, and specifications, we deliver steel solutions built for long-term performance.
               </p>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-[#030716]/10">
+            <div className="mt-8 pt-6 border-t border-[#204268]/10">
               <Button to="/about" variant="dark-border">
                 More about us
               </Button>

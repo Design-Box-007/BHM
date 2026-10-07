@@ -83,15 +83,15 @@ export const MissionVision: React.FC = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[380vh] bg-[#fbf8f1] border-b border-black/10">
+    <div ref={containerRef} className="relative w-full h-[380vh] bg-[#204268] text-white border-b border-white/10">
       {/* Sticky Fullscreen Frame */}
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-[#fbf8f1]">
+      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-[#204268]">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
             {/* Left Column: Pre-title & Giant Dynamic Number (Centered with active image) */}
             <div className="lg:col-span-3 flex flex-col justify-center items-start self-center">
-              <span className="text-[12px] font-semibold uppercase tracking-wider text-[#686E86] mb-6 sm:mb-10">
-                // OUR PROCESS
+              <span className="text-[12px] font-semibold uppercase tracking-wider text-white/70 mb-6 sm:mb-10 font-sans">
+                How we work
               </span>
 
               {/* Dynamic Number Display: e.g. 01 /04, 02 /04 ... */}
@@ -99,16 +99,16 @@ export const MissionVision: React.FC = () => {
                 <div className="relative h-[90px] sm:h-[110px] md:h-[130px] overflow-hidden">
                   <span
                     key={activeStep}
-                    className="block font-['Mona_Sans_Condensed',_'Mona_Sans',_sans-serif] font-black text-[#030716] leading-none transition-all duration-500 transform translate-y-0"
+                    className="block font-display font-black text-white leading-none transition-all duration-500 transform translate-y-0"
                     style={{
-                      fontSize: 'clamp(68px, 9vw, 130px)',
+                      fontSize: 'clamp(68px, 9vw, 110px)',
                       letterSpacing: '-0.04em',
                     }}
                   >
                     {processSteps[activeStep].number}
                   </span>
                 </div>
-                <span className="font-['Mona_Sans',sans-serif] font-bold text-[#030716] text-3xl sm:text-4xl md:text-5xl ml-1">
+                <span className="font-display font-bold text-white text-2xl sm:text-3xl md:text-4xl ml-1">
                   /04
                 </span>
               </div>
@@ -128,12 +128,13 @@ export const MissionVision: React.FC = () => {
                   return (
                     <div
                       key={idx}
-                      className={`w-full h-[290px] sm:h-[340px] md:h-[370px] lg:h-[390px] rounded-[18px] overflow-hidden shadow-xl bg-[#e5e7eb] border border-black/5 shrink-0 transition-all duration-700 ${isActive
-                        ? 'opacity-100 scale-100 shadow-2xl z-10'
-                        : isNext
+                      className={`w-full h-[290px] sm:h-[340px] md:h-[370px] lg:h-[390px] rounded-[18px] overflow-hidden shadow-xl bg-[#204268] border border-white/15 shrink-0 transition-all duration-700 ${
+                        isActive
+                          ? 'opacity-100 scale-100 shadow-2xl z-10'
+                          : isNext
                           ? 'opacity-40 scale-98 shadow-md z-0'
                           : 'opacity-15 scale-95 z-0'
-                        }`}
+                      }`}
                     >
                       <img
                         src={step.image}
@@ -161,10 +162,11 @@ export const MissionVision: React.FC = () => {
                   >
                     {/* Step Title */}
                     <h3
-                      className={`font-['Mona_Sans',sans-serif] tracking-tight transition-all duration-300 ${isActive
-                        ? 'text-[#030716] text-2xl sm:text-3xl font-medium sm:font-bold opacity-100'
-                        : 'text-[#686E86]/75 text-xl sm:text-2xl font-normal opacity-70'
-                        }`}
+                      className={`font-display tracking-tight transition-all duration-300 ${
+                        isActive
+                          ? 'text-white text-xl sm:text-2xl font-bold opacity-100'
+                          : 'text-white/60 text-lg sm:text-xl font-normal opacity-70'
+                      }`}
                     >
                       {step.title}
                     </h3>
@@ -172,7 +174,7 @@ export const MissionVision: React.FC = () => {
                     {/* Step Description (Only visible for the current active step) */}
                     {isActive && (
                       <div className="mt-2.5 transition-all duration-300">
-                        <p className="text-[#686E86] text-[14px] sm:text-[15px] leading-[24px] font-normal font-['Mona_Sans',sans-serif] max-w-sm">
+                        <p className="text-white/80 text-[14px] sm:text-[15px] leading-[24px] font-normal font-sans max-w-sm">
                           {step.description}
                         </p>
                       </div>

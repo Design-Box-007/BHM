@@ -97,22 +97,22 @@ export const GalleryGrid: React.FC = () => {
   }, [lightboxIndex]);
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-28 bg-[#030716] border-b border-white/10 min-h-[600px] relative">
+    <section ref={sectionRef} className="py-10 sm:py-16 md:py-24 bg-[#204268] border-b border-white/10 min-h-[600px] relative">
       <Container>
-        {/* VIEW 1: Main Category Cards Layout (Matching Image 1) */}
+        {/* VIEW 1: Main Category Cards Layout */}
         {!activeAlbum && (
           <div className="animate-fadeIn">
             {/* Filter Pills Header */}
-            <div className="flex flex-wrap items-center gap-3 mb-12 pb-6 border-b border-white/10">
+            <div className="flex flex-wrap items-center gap-3 mb-8 sm:mb-12 pb-4 sm:pb-6 border-b border-white/10">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
                   className={clsx(
-                    'px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer',
+                    'px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer font-sans',
                     selectedCategory === cat
-                      ? 'bg-[#ffb400] text-[#030716] shadow-lg shadow-[#ffb400]/20 scale-105'
-                      : 'bg-[#ffb400]/10 text-[#e0e0e0] hover:bg-[#ffb400]/20 hover:text-[#ffb400] border border-[#ffb400]/25'
+                      ? 'bg-white text-[#204268] font-bold shadow-lg shadow-white/10 scale-105'
+                      : 'bg-white/10 text-white/80 hover:bg-white/20 hover:text-white border border-white/20'
                   )}
                 >
                   {cat}
@@ -126,41 +126,41 @@ export const GalleryGrid: React.FC = () => {
                 <div
                   key={item.id}
                   onClick={() => openAlbum(item.id)}
-                  className="group relative rounded-2xl p-7 md:p-8 bg-[#0c0f1d] border border-white/10 hover:border-[#ffb400]/50 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:shadow-[#ffb400]/5 cursor-pointer transform hover:-translate-y-1"
+                  className="group relative rounded-2xl p-7 md:p-8 bg-white/5 border border-white/15 hover:border-white/40 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl cursor-pointer transform hover:-translate-y-1"
                 >
                   {/* Top Bar inside Card: Quote Icon & View Images Button */}
                   <div>
                     <div className="flex items-center justify-between mb-6">
                       {/* Stylized Quotation Mark */}
-                      <span className="text-3xl font-serif font-black text-[#ffb400] leading-none select-none">
+                      <span className="text-3xl font-serif font-black text-white leading-none select-none">
                         &ldquo;&ldquo;
                       </span>
 
                       {/* View Images Pill Button */}
-                      <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#ffb400]/15 group-hover:bg-[#ffb400] text-[#ffb400] group-hover:text-[#030716] border border-[#ffb400]/30 text-xs font-semibold uppercase tracking-wider transition-all duration-300">
+                      <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/15 group-hover:bg-white text-white group-hover:text-[#204268] border border-white/30 text-xs font-semibold uppercase tracking-wider transition-all duration-300 font-sans">
                         View Images
                         <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                       </span>
                     </div>
 
                     {/* Card Title */}
-                    <h3 className="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-white group-hover:text-[#ffb400] transition-colors leading-snug mb-3">
+                    <h3 className="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-white group-hover:text-white/90 transition-colors leading-snug mb-3">
                       {item.title}
                     </h3>
 
                     {/* Card Description */}
-                    <p className="text-sm md:text-[15px] text-[#9ba3be] leading-relaxed font-normal mb-6">
+                    <p className="text-sm md:text-[15px] text-white/80 leading-relaxed font-normal mb-6 font-sans">
                       {item.description}
                     </p>
                   </div>
 
                   {/* Card Bottom Meta Footer */}
-                  <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-[#686e86] font-mono">
-                    <span className="text-[#ffb400]/80 font-sans uppercase font-medium tracking-wider text-[11px]">
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/70 font-mono">
+                    <span className="text-white font-sans uppercase font-medium tracking-wider text-[11px]">
                       {item.category}
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <ImageIcon className="w-3.5 h-3.5 text-[#ffb400]" />
+                      <ImageIcon className="w-3.5 h-3.5 text-white" />
                       {item.images?.length || 1} Photos
                     </span>
                   </div>
@@ -170,24 +170,24 @@ export const GalleryGrid: React.FC = () => {
           </div>
         )}
 
-        {/* VIEW 2: Specific Gallery Images Grid Layout (Matching Image 2) */}
+        {/* VIEW 2: Specific Gallery Images Grid Layout */}
         {activeAlbum && (
           <div className="animate-fadeIn">
             {/* Top Navigation Bar with Back Button */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 pb-6 border-b border-white/10">
               <button
                 onClick={handleBackToGrid}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#ffb400] text-[#030716] hover:bg-[#e5a200] text-xs md:text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-lg shadow-[#ffb400]/20 cursor-pointer self-start transform hover:-translate-x-1"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#204268] hover:bg-white/90 text-xs md:text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-lg cursor-pointer self-start transform hover:-translate-x-1 font-sans"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back
               </button>
 
               <div className="flex flex-wrap items-center gap-3">
-                <span className="px-3 py-1 rounded-full bg-white/10 border border-white/10 text-xs font-semibold uppercase tracking-wider text-[#ffb400]">
+                <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-semibold uppercase tracking-wider text-white font-sans">
                   {activeAlbum.category}
                 </span>
-                <span className="text-xs text-[#bfbfbf] font-mono">
+                <span className="text-xs text-white/70 font-mono">
                   {currentAlbumImages.length} Curated Images
                 </span>
               </div>
@@ -195,10 +195,10 @@ export const GalleryGrid: React.FC = () => {
 
             {/* Album Header Summary */}
             <div className="mb-10 max-w-3xl">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold uppercase text-white tracking-tight mb-3">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase text-white tracking-tight mb-3">
                 {activeAlbum.title}
               </h2>
-              <p className="text-sm md:text-base text-[#9ba3be] leading-relaxed">
+              <p className="text-sm md:text-base text-white/80 leading-relaxed font-sans">
                 {activeAlbum.description}
               </p>
             </div>
@@ -209,7 +209,7 @@ export const GalleryGrid: React.FC = () => {
                 <div
                   key={idx}
                   onClick={() => openLightbox(idx)}
-                  className="group relative rounded-2xl overflow-hidden bg-[#0c0f1d] border border-white/10 hover:border-[#ffb400]/60 shadow-xl cursor-pointer aspect-[4/3] transition-all duration-500 hover:shadow-2xl hover:shadow-[#ffb400]/10"
+                  className="group relative rounded-2xl overflow-hidden bg-[#204268] border border-white/15 hover:border-white/50 shadow-xl cursor-pointer aspect-[4/3] transition-all duration-500 hover:shadow-2xl"
                 >
                   <img
                     src={imgUrl}
@@ -219,19 +219,19 @@ export const GalleryGrid: React.FC = () => {
                   />
 
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#030716]/90 via-[#030716]/20 to-transparent opacity-40 group-hover:opacity-80 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#204268]/90 via-[#204268]/20 to-transparent opacity-40 group-hover:opacity-80 transition-opacity duration-300" />
 
                   {/* Top Enlarge Badge */}
-                  <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#030716]/80 border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
-                    <Maximize2 className="w-4 h-4 text-[#ffb400]" />
+                  <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#204268]/80 border border-white/30 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+                    <Maximize2 className="w-4 h-4 text-white" />
                   </div>
 
                   {/* Bottom Photo Count Badge */}
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <span className="font-mono text-[11px] text-[#bfbfbf] bg-[#030716]/80 px-2.5 py-1 rounded-[4px] border border-white/10">
+                    <span className="font-mono text-[11px] text-white/90 bg-[#204268]/90 px-2.5 py-1 rounded-[4px] border border-white/20">
                       Photo {idx + 1} of {currentAlbumImages.length}
                     </span>
-                    <span className="text-[#ffb400] font-semibold uppercase tracking-wider text-[10px] flex items-center gap-1">
+                    <span className="text-white font-semibold uppercase tracking-wider text-[10px] flex items-center gap-1 font-sans">
                       <Sparkles className="w-3 h-3" /> View Full
                     </span>
                   </div>

@@ -14,7 +14,10 @@ export function animateHeroSequence(container: HTMLElement) {
   const overlay = container.querySelector('[data-hero-overlay]');
   const badge = container.querySelector('[data-hero-badge]');
 
-  tl.set([tag, headline, subtext, cta, media, overlay, badge], { visibility: 'visible' });
+  const elements = [tag, headline, subtext, cta, media, overlay, badge].filter(Boolean);
+  if (elements.length > 0) {
+    tl.set(elements, { visibility: 'visible' });
+  }
 
   if (overlay) {
     tl.fromTo(overlay, { scale: 0.92, opacity: 0, rotation: 0 }, { scale: 1, opacity: 1, rotation: -5, duration: 1.1 }, 0);
