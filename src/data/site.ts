@@ -37,7 +37,7 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "BHM",
+  name: "BHMI",
   tagline: "Your all-in-one structural bonding partner",
   heroHeadline: "Precision Steel Fabrication & Welding Solutions",
   heroSubtext: "We deliver high-performance steel fabrication, precision welding, and custom metalworking solutions built for demanding industrial, commercial, and architectural applications. From cutting and forming to welding and finishing, every project is engineered with structural integrity, dimensional accuracy, safety, and long-term durability in mind.",
@@ -47,8 +47,8 @@ export const siteConfig: SiteConfig = {
   ratingCount: 148,
   phone: "+1 (800) 582-9353",
   phoneRaw: "+18005829353",
-  email: "info@bhm-bonding.com",
-  supportEmail: "support@bhm-bonding.com",
+  email: "info@bhmi-bonding.com",
+  supportEmail: "support@bhmi-bonding.com",
   address: {
     street: "71–75 Shelton Street, Covent Garden",
     city: "London",

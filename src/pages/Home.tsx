@@ -23,7 +23,7 @@ export const Home: React.FC = () => {
     <div ref={pageRef} className="w-full">
       <SEO
         title="Precision Structural Bonding & Metal Fabrication Solutions"
-        description="BHM delivers high-performance structural bonding, precision welding, and custom metal fabrication engineered for extreme durability, safety, and industrial excellence."
+        description="BHMI delivers high-performance structural bonding, precision welding, and custom metal fabrication engineered for extreme durability, safety, and industrial excellence."
       />
       {/* 1. Hero Section with Watermark Marquee & Rotated Card */}
       <Hero />

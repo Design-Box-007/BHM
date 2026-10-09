@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
                 <div className="bg-white px-3 py-1.5 rounded-[6px] shadow-sm flex items-center transition-transform duration-300 group-hover:scale-105">
                   <img
                     src="/images/bhm-logo.png"
-                    alt="BHM - Your all-in-one structural bonding partner"
+                    alt="BHMI - Your all-in-one structural bonding partner"
                     className="h-9 w-auto object-contain"
                   />
                 </div>
@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="text-xs text-white/70 leading-relaxed lg:ml-auto pt-4">
-              <p>Copyright @ {new Date().getFullYear()} BHM. All rights reserved.</p>
+              <p>Copyright @ {new Date().getFullYear()} BHMI. All rights reserved.</p>
               <p>Structural Bonding & Metal Fabrication Partner</p>
             </div>
           </div>

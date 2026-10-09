@@ -54,7 +54,7 @@ export const CTA: React.FC = () => {
         {/* Giant Watermark Outline Text at bottom of CTA */}
         <div className="text-center select-none opacity-10 pointer-events-none mt-12 overflow-hidden">
           <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold uppercase text-[#204268] tracking-tight whitespace-nowrap block">
-            BHM BONDING PARTNER
+            BHMI BONDING PARTNER
           </span>
         </div>
       </Container>

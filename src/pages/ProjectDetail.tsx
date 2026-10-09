@@ -38,7 +38,7 @@ export const ProjectDetail: React.FC = () => {
   return (
     <div ref={pageRef} className="w-full bg-[#204268] min-h-screen text-white pt-24 md:pt-32 font-sans">
       <SEO
-        title={`${project.title} | BHM Structural Bonding`}
+        title={`${project.title} | BHMI Structural Bonding`}
         description={project.description}
       />
 

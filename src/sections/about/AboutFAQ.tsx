@@ -12,63 +12,63 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     number: '01',
-    question: 'What does BHM Steels specialize in?',
+    question: 'What does BHMI Steels specialize in?',
     answer:
-      'BHM Steels specializes in steel fabrication, precision welding, metal cutting, CNC machining, blasting and coating, and custom metalwork for industrial, commercial, construction, and architectural applications.',
+      'BHMI Steels specializes in steel fabrication, precision welding, metal cutting, CNC machining, blasting and coating, and custom metalwork for industrial, commercial, construction, and architectural applications.',
   },
   {
     number: '02',
-    question: 'Where does BHM Steels provide its services?',
+    question: 'Where does BHMI Steels provide its services?',
     answer:
-      'BHM Steels provides steel fabrication and metalworking solutions across the UAE, supporting projects based on their specific technical and fabrication requirements.',
+      'BHMI Steels provides steel fabrication and metalworking solutions across the UAE, supporting projects based on their specific technical and fabrication requirements.',
   },
   {
     number: '03',
-    question: 'What types of projects does BHM Steels handle?',
+    question: 'What types of projects does BHMI Steels handle?',
     answer:
       'We support industrial, construction, manufacturing, commercial, architectural, and interior projects, from custom metal components to larger fabrication requirements.',
   },
   {
     number: '04',
-    question: 'Does BHM Steels provide custom fabrication?',
+    question: 'Does BHMI Steels provide custom fabrication?',
     answer:
       'Yes. Our custom metal fabrication services can be tailored to project drawings, dimensions, material specifications, design requirements, and application needs.',
   },
   {
     number: '05',
-    question: 'What welding capabilities does BHM Steels offer?',
+    question: 'What welding capabilities does BHMI Steels offer?',
     answer:
       'We provide MIG, TIG, and ARC welding, including structural welding, heavy-duty fabrication, custom welding, and assembly solutions.',
   },
   {
     number: '06',
-    question: 'Does BHM Steels offer complete fabrication services?',
+    question: 'Does BHMI Steels offer complete fabrication services?',
     answer:
       'Yes. Our capabilities cover multiple stages of fabrication, including metal cutting, forming, welding, CNC machining, surface preparation, blasting, coating, and finishing.',
   },
   {
     number: '07',
-    question: 'How does BHM Steels maintain fabrication quality?',
+    question: 'How does BHMI Steels maintain fabrication quality?',
     answer:
       'We focus on precision, skilled workmanship, dimensional accuracy, material requirements, and quality control throughout the fabrication process to deliver reliable finished components.',
   },
   {
     number: '08',
-    question: 'Can BHM Steels work from technical drawings?',
+    question: 'Can BHMI Steels work from technical drawings?',
     answer:
       'Yes. Our fabrication team can work from technical drawings, dimensions, specifications, and project requirements to develop customized metal and steel components.',
   },
   {
     number: '09',
-    question: 'Does BHM Steels handle architectural and interior metalwork?',
+    question: 'Does BHMI Steels handle architectural and interior metalwork?',
     answer:
       'Yes. We provide custom architectural metalwork, decorative metal components, furniture, partitions, frames, fixtures, and other interior fabrication solutions.',
   },
   {
     number: '10',
-    question: 'Why choose BHM Steels for a fabrication project in the UAE?',
+    question: 'Why choose BHMI Steels for a fabrication project in the UAE?',
     answer:
-      'BHM Steels combines precision engineering, skilled workmanship, advanced fabrication capabilities, comprehensive services, and customized project support to deliver durable metal solutions for diverse applications across the UAE.',
+      'BHMI Steels combines precision engineering, skilled workmanship, advanced fabrication capabilities, comprehensive services, and customized project support to deliver durable metal solutions for diverse applications across the UAE.',
   },
 ];
 
@@ -89,7 +89,7 @@ export const AboutFAQ: React.FC = () => {
               // FAQ
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-[#204268] tracking-tight">
-              Frequently Asked Questions About BHM Steels
+              Frequently Asked Questions About BHMI Steels
             </h2>
           </div>
           <Button to="/contact" variant="dark-border">

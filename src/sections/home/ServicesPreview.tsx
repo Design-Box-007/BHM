@@ -82,7 +82,7 @@ export const ServicesPreview: React.FC = () => {
               End-to-End Steel Fabrication & Metalworking Services
             </h2>
             <p className="text-[#204268]/70 font-sans text-sm sm:text-base lg:text-lg xl:text-lg font-normal leading-normal mt-3 max-w-[760px] mx-auto">
-              From precision metal cutting and structural fabrication to CNC machining, welding, surface treatment, and custom metalwork, BHM Steels provides comprehensive fabrication solutions tailored to demanding project requirements.
+              From precision metal cutting and structural fabrication to CNC machining, welding, surface treatment, and custom metalwork, BHMI Steels provides comprehensive fabrication solutions tailored to demanding project requirements.
             </p>
           </div>
 

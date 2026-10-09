@@ -57,7 +57,7 @@ export const AboutPreview: React.FC = () => {
         {/* Section Title */}
         <div className="max-w-3xl mb-6 sm:mb-10 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-[#204268] leading-tight tracking-tight">
-            About BHM Steels
+            About BHMI Steels
           </h2>
         </div>
 
@@ -67,7 +67,7 @@ export const AboutPreview: React.FC = () => {
           <div className="lg:col-span-4 flex flex-col">
             <ImageReveal
               src="images/about-company-grinder.jpg"
-              alt="Precision metal fabrication at BHM"
+              alt="Precision metal fabrication at BHMI"
               aspectRatio="aspect-[4/3] lg:aspect-auto"
               className="h-full min-h-[320px] rounded-[10px]"
             />
@@ -115,10 +115,10 @@ export const AboutPreview: React.FC = () => {
           <div className="lg:col-span-5 flex flex-col justify-between p-8 sm:p-10 rounded-[10px] bg-white border border-[#204268]/20 text-[#204268] shadow-sm">
             <div className="space-y-4">
               <p className="text-sm sm:text-base leading-relaxed text-[#204268]/80 font-sans">
-                BHM Steels delivers precision steel fabrication and metalworking solutions, combining skilled craftsmanship, modern technology, and strict quality standards to create durable solutions for industrial and commercial projects.
+                BHMI Steels delivers precision steel fabrication and metalworking solutions, combining skilled craftsmanship, modern technology, and strict quality standards to create durable solutions for industrial and commercial projects.
               </p>
               <p className="text-sm sm:text-base leading-relaxed text-[#204268]/80 font-sans">
-                BHM Steels combines precision fabrication, quality workmanship, and advanced metalworking capabilities to deliver reliable solutions for diverse project requirements. From cutting, bending, welding, and CNC machining to blasting and coating, we provide comprehensive services with a strong focus on accuracy and durability. Our expertise supports construction, industrial, manufacturing, commercial, and architectural projects across the UAE. With a safety-focused approach and custom fabrication based on project drawings, dimensions, materials, and specifications, we deliver steel solutions built for long-term performance.
+                BHMI Steels combines precision fabrication, quality workmanship, and advanced metalworking capabilities to deliver reliable solutions for diverse project requirements. From cutting, bending, welding, and CNC machining to blasting and coating, we provide comprehensive services with a strong focus on accuracy and durability. Our expertise supports construction, industrial, manufacturing, commercial, and architectural projects across the UAE. With a safety-focused approach and custom fabrication based on project drawings, dimensions, materials, and specifications, we deliver steel solutions built for long-term performance.
               </p>
             </div>
 

@@ -55,7 +55,7 @@ export const PageLoader: React.FC = () => {
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-3">
           <div className="w-4 h-4 bg-white rounded-[3px]" />
-          <span className="font-display text-lg tracking-wider font-bold">BHM</span>
+          <span className="font-display text-lg tracking-wider font-bold">BHMI</span>
         </div>
         <span className="text-xs uppercase tracking-widest text-white/70">
           STRUCTURAL BONDING PARTNER

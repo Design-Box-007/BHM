@@ -26,7 +26,7 @@ export const ServiceDetail: React.FC = () => {
   return (
     <div ref={pageRef} className="w-full bg-[#204268] text-white pt-32 sm:pt-36 md:pt-40 pb-20 md:pb-28 font-sans">
       <SEO
-        title={`${service.title} | BHM Structural Solutions`}
+        title={`${service.title} | BHMI Structural Solutions`}
         description={service.headline}
       />
 

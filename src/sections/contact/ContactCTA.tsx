@@ -70,7 +70,7 @@ export const ContactCTA: React.FC = () => {
             <div className="rounded-[16px] overflow-hidden shadow-xl border border-[#204268]/10 group">
               <img
                 src="/images/service-metal-fabrication.jpg"
-                alt="BHM Structural Steel & Metal Fabrication Services"
+                alt="BHMI Structural Steel & Metal Fabrication Services"
                 className="w-full h-64 sm:h-72 md:h-80 object-cover transform transition-transform duration-700 group-hover:scale-105"
               />
             </div>
@@ -80,7 +80,7 @@ export const ContactCTA: React.FC = () => {
         {/* Giant Watermark Outline Text at bottom */}
         <div className="text-center select-none opacity-5 pointer-events-none mt-12 overflow-hidden">
           <span className="text-6xl sm:text-8xl md:text-9xl lg:text-[140px] font-display font-black uppercase text-[#204268] tracking-tighter whitespace-nowrap block">
-            BHM SUPPORT?
+            BHMI SUPPORT?
           </span>
         </div>
       </Container>

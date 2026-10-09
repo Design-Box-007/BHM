@@ -12,19 +12,19 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     number: '01',
-    question: 'What steel fabrication services does BHM Steels provide?',
+    question: 'What steel fabrication services does BHMI Steels provide?',
     answer:
-      'BHM Steels provides custom metal fabrication, precision metal cutting, welding, CNC machining, blasting and coating, and interior and architectural metalwork for industrial, commercial, construction, manufacturing, and architectural projects.',
+      'BHMI Steels provides custom metal fabrication, precision metal cutting, welding, CNC machining, blasting and coating, and interior and architectural metalwork for industrial, commercial, construction, manufacturing, and architectural projects.',
   },
   {
     number: '02',
-    question: 'Does BHM Steels provide custom metal fabrication?',
+    question: 'Does BHMI Steels provide custom metal fabrication?',
     answer:
       'Yes. Our custom steel fabrication services are developed according to technical drawings, dimensions, material specifications, tolerances, and specific project requirements.',
   },
   {
     number: '03',
-    question: 'What types of welding does BHM Steels offer?',
+    question: 'What types of welding does BHMI Steels offer?',
     answer:
       'We provide MIG, TIG, and ARC welding for structural steel, industrial fabrication, commercial projects, custom metalwork, and heavy-duty applications.',
   },
@@ -54,33 +54,33 @@ const faqs: FAQItem[] = [
   },
   {
     number: '08',
-    question: 'Can BHM Steels fabricate components from technical drawings?',
+    question: 'Can BHMI Steels fabricate components from technical drawings?',
     answer:
       'Yes. We can work with technical drawings, dimensions, material specifications, design requirements, and project documentation to manufacture components according to the required specifications.',
   },
   {
     number: '09',
-    question: 'Does BHM Steels provide architectural and interior metalwork?',
+    question: 'Does BHMI Steels provide architectural and interior metalwork?',
     answer:
       'Yes. We fabricate custom metal furniture, partitions, frames, fixtures, decorative elements, architectural features, and other bespoke metal components for interior and architectural applications.',
   },
   {
     number: '10',
-    question: 'Can BHM Steels handle complete fabrication requirements?',
+    question: 'Can BHMI Steels handle complete fabrication requirements?',
     answer:
       'Yes. Our integrated capabilities allow us to support multiple stages of a project, from metal cutting and fabrication to welding, CNC machining, surface preparation, blasting, coating, and finishing.',
   },
   {
     number: '11',
-    question: 'Where does BHM Steels provide fabrication services?',
+    question: 'Where does BHMI Steels provide fabrication services?',
     answer:
-      'BHM Steels provides steel fabrication and metalworking solutions across the UAE, supporting projects with customized fabrication and engineering requirements.',
+      'BHMI Steels provides steel fabrication and metalworking solutions across the UAE, supporting projects with customized fabrication and engineering requirements.',
   },
   {
     number: '12',
     question: 'How can I request a steel fabrication project?',
     answer:
-      'You can contact BHM Steels with your project drawings, specifications, dimensions, material requirements, quantities, and application details. Our team can review the requirements and determine the appropriate fabrication solution.',
+      'You can contact BHMI Steels with your project drawings, specifications, dimensions, material requirements, quantities, and application details. Our team can review the requirements and determine the appropriate fabrication solution.',
   },
 ];
 
@@ -101,7 +101,7 @@ export const ServicesFAQ: React.FC = () => {
               // FAQ
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-[#204268] tracking-tight">
-              Frequently Asked Questions – BHM Steels Services
+              Frequently Asked Questions – BHMI Steels Services
             </h2>
           </div>
           <Button to="/contact" variant="dark-border">

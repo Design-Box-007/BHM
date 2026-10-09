@@ -34,7 +34,7 @@ export const WhyChooseUs: React.FC = () => {
             // Competitive Advantage
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[#204268]">
-            Why leading contractors choose BHM
+            Why leading contractors choose BHMI
           </h2>
         </div>
 

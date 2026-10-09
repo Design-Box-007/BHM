@@ -37,7 +37,7 @@ export const Services: React.FC = () => {
       {/* 5. CTA Section with Contact Details & Craftsmanship Gallery */}
       <ServicesCTA />
 
-      {/* 6. Frequently Asked Questions – BHM Steels Services */}
+      {/* 6. Frequently Asked Questions – BHMI Steels Services */}
       <ServicesFAQ />
     </div>
   );

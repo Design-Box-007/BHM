@@ -13,9 +13,9 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     id: '1',
-    question: 'How can I contact BHM Steels?',
+    question: 'How can I contact BHMI Steels?',
     answer:
-      'You can contact BHM Steels through the contact form, phone, email, or other contact details provided on our website. Our team will review your enquiry and respond with the relevant information.',
+      'You can contact BHMI Steels through the contact form, phone, email, or other contact details provided on our website. Our team will review your enquiry and respond with the relevant information.',
   },
   {
     id: '2',
@@ -37,19 +37,19 @@ const faqs: FAQItem[] = [
   },
   {
     id: '5',
-    question: 'Does BHM Steels handle custom fabrication projects?',
+    question: 'Does BHMI Steels handle custom fabrication projects?',
     answer:
       'Yes. We accept enquiries for custom steel fabrication, precision welding, metal cutting, CNC machining, blasting and coating, and architectural metalwork.',
   },
   {
     id: '6',
-    question: 'Does BHM Steels provide services across the UAE?',
+    question: 'Does BHMI Steels provide services across the UAE?',
     answer:
       'Yes. We support industrial, commercial, construction, manufacturing, and architectural projects across the UAE, subject to project requirements and location.',
   },
   {
     id: '7',
-    question: 'How quickly will BHM Steels respond to my enquiry?',
+    question: 'How quickly will BHMI Steels respond to my enquiry?',
     answer:
       'Our team will review your enquiry and respond as soon as possible. Providing complete project information can help us understand your requirements and respond more efficiently.',
   },
@@ -61,13 +61,13 @@ const faqs: FAQItem[] = [
   },
   {
     id: '9',
-    question: 'Can BHM Steels handle large industrial fabrication requirements?',
+    question: 'Can BHMI Steels handle large industrial fabrication requirements?',
     answer:
       'Yes. You can share your project scope, drawings, quantities, and technical specifications with our team so we can assess the fabrication requirements.',
   },
   {
     id: '10',
-    question: 'How do I get started with BHM Steels?',
+    question: 'How do I get started with BHMI Steels?',
     answer:
       'Simply send us your project requirements or contact our team. Share your drawings and specifications where available, and we will guide you through the next steps.',
   },

@@ -8,11 +8,11 @@ interface SEOProps {
 
 export const SEO: React.FC<SEOProps> = ({
   title,
-  description = "BHM — Your all-in-one structural bonding and metal fabrication partner.",
-  keywords = "bonding, structural bonding, metal fabrication, structural welding, industrial fabrication, BHM",
+  description = "BHMI — Your all-in-one structural bonding and metal fabrication partner.",
+  keywords = "bonding, structural bonding, metal fabrication, structural welding, industrial fabrication, BHMI",
 }) => {
   useEffect(() => {
-    document.title = `${title} | BHM Structural Bonding`;
+    document.title = `${title} | BHMI Structural Bonding`;
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {

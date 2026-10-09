@@ -33,7 +33,7 @@ export const ServicesHero: React.FC = () => {
               Delivering custom structural bonding solutions designed for strength, precision &amp; lasting durability.
             </p>
             <p className="mt-3 text-sm sm:text-base md:text-lg text-[#204268]/80 leading-relaxed max-w-xl font-sans font-normal">
-              At BHM Steels, we provide comprehensive fabrication services for industrial, commercial, construction, manufacturing, and architectural projects across the UAE. From precision metal cutting and structural welding to CNC machining, blasting, coating, and custom metalwork, our capabilities cover the complete fabrication process.
+              At BHMI Steels, we provide comprehensive fabrication services for industrial, commercial, construction, manufacturing, and architectural projects across the UAE. From precision metal cutting and structural welding to CNC machining, blasting, coating, and custom metalwork, our capabilities cover the complete fabrication process.
             </p>
 
             <div className="mt-8 flex items-center gap-4">

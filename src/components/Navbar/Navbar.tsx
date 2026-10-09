@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
       {/* Top Navbar Bar */}
       <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20 md:h-18">
-          {/* Logo on Left: BHM uploaded logo */}
+          {/* Logo on Left: BHMI uploaded logo */}
           <div
             className={clsx(
               "flex items-center border-b h-full pr-8 shrink-0 transition-colors duration-300",
@@ -119,7 +119,7 @@ export const Navbar: React.FC = () => {
             <Link
               to="/"
               className="flex items-center group focus:outline-hidden"
-              aria-label="BHM Home"
+              aria-label="BHMI Home"
             >
               <div
                 className={clsx(
@@ -129,7 +129,7 @@ export const Navbar: React.FC = () => {
               >
                 <img
                   src="/images/bhm-logo.png"
-                  alt="BHM - Your all-in-one structural bonding partner"
+                  alt="BHMI - Your all-in-one structural bonding partner"
                   className="h-16 sm:h-16 w-auto object-contain"
                 />
               </div>

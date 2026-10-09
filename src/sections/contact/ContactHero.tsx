@@ -109,13 +109,13 @@ export const ContactHero: React.FC = () => {
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/15 group relative bg-white/5">
               <img
                 src="/images/hero-welder.jpg"
-                alt="BHM Steels Precision Fabrication Facility"
+                alt="BHMI Steels Precision Fabrication Facility"
                 className="w-full h-64 sm:h-72 lg:h-80 object-cover transform transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#204268]/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
                 <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-xs text-[11px] font-semibold text-white uppercase tracking-wider border border-white/20 inline-block mb-1">
-                  BHM Engineering Hub
+                  BHMI Engineering Hub
                 </span>
                 <p className="text-xs text-white/90">
                   Precision steel fabrication, certified welding & CNC machining
@@ -126,7 +126,7 @@ export const ContactHero: React.FC = () => {
             {/* Social Links */}
             <div className="pt-2">
               <span className="text-[11px] uppercase tracking-wider text-white/60 block mb-3">
-                Follow BHM
+                Follow BHMI
               </span>
               <div className="flex flex-wrap items-center gap-3">
                 {[
@@ -163,7 +163,7 @@ export const ContactHero: React.FC = () => {
                   Quotation Request Received
                 </h3>
                 <p className="text-sm text-white/80 max-w-md mx-auto leading-relaxed">
-                  Thank you for contacting BHM Steels. Our technical estimating team will review your specifications and get back to you promptly.
+                  Thank you for contacting BHMI Steels. Our technical estimating team will review your specifications and get back to you promptly.
                 </p>
                 <div className="pt-4">
                   <button

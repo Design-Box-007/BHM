@@ -14,7 +14,7 @@ export const CompanyStory: React.FC = () => {
             {/* Section Pretitle Box */}
             <div className="section-pretitle-box lg:col-span-4">
               <div className="section-pretitle text-[14px] font-semibold uppercase tracking-wider text-[#204268]/70 font-sans">
-                About BHM Steels
+                About BHMI Steels
               </div>
             </div>
 
@@ -27,7 +27,7 @@ export const CompanyStory: React.FC = () => {
               </div>
               <div className="section-title-block space-y-6 max-w-3xl">
                 <p className="text-base sm:text-lg lg:text-xl text-[#204268]/90 font-sans font-normal leading-relaxed">
-                  BHM Steels provides precision welding and metal fabrication solutions for industrial, commercial, construction, and custom projects across the UAE. We combine skilled workmanship, advanced fabrication capabilities, and rigorous quality standards to deliver steel solutions engineered for strength, accuracy, safety, and long-term performance.
+                  BHMI Steels provides precision welding and metal fabrication solutions for industrial, commercial, construction, and custom projects across the UAE. We combine skilled workmanship, advanced fabrication capabilities, and rigorous quality standards to deliver steel solutions engineered for strength, accuracy, safety, and long-term performance.
                 </p>
                 <p className="text-base sm:text-lg lg:text-xl text-[#204268]/80 font-sans font-normal leading-relaxed">
                   From structural steel fabrication and precision welding to metal cutting, CNC machining, blasting, and protective coating, our comprehensive capabilities allow us to handle projects from raw material preparation through to finished components. We work closely with clients to deliver custom metal solutions tailored to project drawings, specifications, dimensions, and application requirements.

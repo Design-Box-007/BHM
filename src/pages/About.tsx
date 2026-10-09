@@ -20,7 +20,7 @@ export const About: React.FC = () => {
     <div ref={pageRef} className="w-full">
       <SEO
         title="About Us — Engineering Heritage & Standards"
-        description="Learn about BHM's decade of engineering mastery, certified quality standards, and state-of-the-art structural bonding and fabrication facility."
+        description="Learn about BHMI's decade of engineering mastery, certified quality standards, and state-of-the-art structural bonding and fabrication facility."
       />
       <AboutHero />
       <CompanyStory />
