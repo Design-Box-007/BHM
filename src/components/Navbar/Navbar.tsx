@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { clsx } from 'clsx';
-import { X, ChevronDown, ArrowRight } from 'lucide-react';
+import { X } from 'lucide-react';
 
 // Character-by-character Split Rolling Text component matching Webflow gsap_split_letter animation
 const SplitRollingText: React.FC<{ text: string; isActive?: boolean; isScrolled?: boolean }> = ({
@@ -12,7 +12,7 @@ const SplitRollingText: React.FC<{ text: string; isActive?: boolean; isScrolled?
   const letters = text.split('');
 
   return (
-    <span className="relative inline-block overflow-hidden h-[20px] leading-[20px] select-none font-sans uppercase text-sm font-semibold tracking-wider">
+    <span className="relative inline-block overflow-hidden h-[20px] leading-[20px] select-none font-sans uppercase text-xs xl:text-sm font-semibold tracking-wider">
       {/* Top text layer */}
       <span className="inline-flex" aria-label={text}>
         {letters.map((char, index) => (
@@ -60,9 +60,7 @@ const SplitRollingText: React.FC<{ text: string; isActive?: boolean; isScrolled?
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [socialDropdownOpen, setSocialDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobilePagesDropdownOpen, setMobilePagesDropdownOpen] = useState(false);
   const location = useLocation();
 
   const isLightHeader = scrolled || location.pathname === '/services';
@@ -78,7 +76,6 @@ export const Navbar: React.FC = () => {
   // Close menus on route change
   useEffect(() => {
     setMobileMenuOpen(false);
-    setSocialDropdownOpen(false);
   }, [location.pathname]);
 
   const navLinks = [
@@ -86,16 +83,12 @@ export const Navbar: React.FC = () => {
     { label: 'ABOUT US', path: '/about' },
     { label: 'SERVICES', path: '/services' },
     { label: 'PRODUCTS', path: '/products' },
+    { label: 'COMPONENTS', path: '/components' },
     { label: 'GALLERY', path: '/gallery' },
     { label: 'CONTACT', path: '/contact' },
   ];
 
-  const socialLinks = [
-    { name: 'Facebook', href: 'https://facebook.com', icon: 'f' },
-    { name: 'Instagram', href: 'https://instagram.com', icon: '📷' },
-    { name: 'Twitter', href: 'https://x.com', icon: '𝕏' },
-    { name: 'Linkedin', href: 'https://linkedin.com', icon: 'in' },
-  ];
+
 
   return (
     <header
@@ -112,7 +105,7 @@ export const Navbar: React.FC = () => {
           {/* Logo on Left: BHMI uploaded logo */}
           <div
             className={clsx(
-              "flex items-center border-b h-full pr-8 shrink-0 transition-colors duration-300",
+              "flex items-center border-b h-full pr-6 xl:pr-8 shrink-0 transition-colors duration-300",
               isLightHeader ? "border-[#204268]/20" : "border-white/20"
             )}
           >
@@ -130,21 +123,21 @@ export const Navbar: React.FC = () => {
                 <img
                   src="/images/bhm-logo.png"
                   alt="BHMI - Your all-in-one structural bonding partner"
-                  className="h-16 sm:h-16 w-auto object-contain"
+                  className="h-14 sm:h-16 w-auto object-contain"
                 />
               </div>
             </Link>
           </div>
 
           {/* Desktop Navigation Links without circles beside each menu */}
-          <nav className="hidden lg:flex items-center justify-between flex-1 h-full px-6 gap-6 xl:gap-8">
+          <nav className="hidden lg:flex items-center justify-between flex-1 h-full px-3 xl:px-6 gap-2 xl:gap-6">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
                   clsx(
-                    'group relative h-full flex-1 inline-flex items-center justify-center px-3 pb-0.5 text-sm font-semibold tracking-wider transition-all duration-300 border-b cursor-pointer',
+                    'group relative h-full flex-1 inline-flex items-center justify-center px-1.5 xl:px-3 pb-0.5 text-xs xl:text-sm font-semibold tracking-wider transition-all duration-300 border-b cursor-pointer whitespace-nowrap',
                     isLightHeader
                       ? isActive
                         ? 'text-[#204268] border-b-2 border-b-[#204268]'
@@ -162,40 +155,17 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Right Hamburger / Close Toggle Button on Desktop with its own line segment */}
+          {/* Mobile Menu Toggle Button */}
           <div
             className={clsx(
-              "flex items-center justify-end h-full border-b pl-8 shrink-0 transition-colors duration-300",
+              "flex lg:hidden items-center justify-end h-full border-b pl-6 shrink-0 transition-colors duration-300",
               isLightHeader ? "border-[#204268]/20" : "border-white/20"
             )}
           >
-            {/* Desktop Social Drawer Trigger */}
-            <button
-              onClick={() => setSocialDropdownOpen(!socialDropdownOpen)}
-              className={clsx(
-                "hidden lg:flex p-2.5 transition-colors focus:outline-hidden cursor-pointer",
-                isLightHeader
-                  ? "text-[#204268] hover:text-[#204268]/70"
-                  : "text-white hover:text-white/80"
-              )}
-              aria-label="Toggle Social Menu"
-            >
-              {socialDropdownOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <div className="flex flex-col items-end gap-1.5 w-6">
-                  <span className={clsx("w-6 h-[2px] rounded-full transition-all group-hover:w-6", isLightHeader ? "bg-[#204268]" : "bg-white")} />
-                  <span className={clsx("w-4 h-[2px] rounded-full transition-all group-hover:w-6", isLightHeader ? "bg-[#204268]" : "bg-white")} />
-                  <span className={clsx("w-6 h-[2px] rounded-full transition-all group-hover:w-6", isLightHeader ? "bg-[#204268]" : "bg-white")} />
-                </div>
-              )}
-            </button>
-
-            {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={clsx(
-                "flex lg:hidden p-2 transition-colors focus:outline-hidden cursor-pointer",
+                "p-2 transition-colors focus:outline-hidden cursor-pointer",
                 isLightHeader
                   ? "text-[#204268] hover:text-[#204268]/70"
                   : "text-white hover:text-white/80"
@@ -216,49 +186,7 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Desktop Floating Social Drawer */}
-      {socialDropdownOpen && (
-        <div className="hidden lg:block absolute right-8 xl:right-24 top-24 z-50 animate-fadeIn">
-          <div
-            className={clsx(
-              "w-[260px] rounded-[16px] backdrop-blur-md shadow-2xl p-6 border transition-colors",
-              isLightHeader
-                ? "bg-white text-[#204268] border-[#204268]/20"
-                : "bg-[#204268]/95 border-white/20 text-white"
-            )}
-          >
-            <div className={clsx("flex flex-col divide-y", isLightHeader ? "divide-[#204268]/10" : "divide-white/10")}>
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={clsx(
-                    "group flex items-center justify-between py-3.5 text-sm font-medium transition-colors",
-                    isLightHeader
-                      ? "text-[#204268]/90 hover:text-[#204268]"
-                      : "text-white/90 hover:text-white"
-                  )}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="w-5 text-center font-bold text-xs opacity-70 group-hover:opacity-100">
-                      {social.icon}
-                    </span>
-                    <span>{social.name}</span>
-                  </div>
-                  <ArrowRight
-                    className={clsx(
-                      "w-4 h-4 transition-transform group-hover:translate-x-1",
-                      isLightHeader ? "text-[#204268]/50 group-hover:text-[#204268]" : "text-white/50 group-hover:text-white"
-                    )}
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+
 
       {/* Mobile Floating Menu Card */}
       {mobileMenuOpen && (
@@ -306,7 +234,7 @@ export const Navbar: React.FC = () => {
               ))}
 
               {/* Collapsible Pages Dropdown */}
-              <div className={clsx("pt-2 border-t", isLightHeader ? "border-[#204268]/10" : "border-white/10")}>
+              {/* <div className={clsx("pt-2 border-t", isLightHeader ? "border-[#204268]/10" : "border-white/10")}>
                 <button
                   onClick={() => setMobilePagesDropdownOpen(!mobilePagesDropdownOpen)}
                   className={clsx(
@@ -353,6 +281,13 @@ export const Navbar: React.FC = () => {
                       Fabricated Products
                     </Link>
                     <Link
+                      to="/components"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={clsx("py-1 transition-colors", isLightHeader ? "hover:text-[#204268]" : "hover:text-white")}
+                    >
+                      Engineered Components
+                    </Link>
+                    <Link
                       to="/gallery"
                       onClick={() => setMobileMenuOpen(false)}
                       className={clsx("py-1 transition-colors", isLightHeader ? "hover:text-[#204268]" : "hover:text-white")}
@@ -361,7 +296,7 @@ export const Navbar: React.FC = () => {
                     </Link>
                   </div>
                 )}
-              </div>
+              </div> */}
             </nav>
           </div>
         </div>

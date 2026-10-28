@@ -4,6 +4,7 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { Products } from './pages/Products';
+import { Components } from './pages/Components';
 import { Gallery } from './pages/Gallery';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { ServiceDetail } from './pages/ServiceDetail';
@@ -22,6 +23,8 @@ export function App() {
           <Route path="service" element={<Navigate to="/services" replace />} />
           <Route path="service/:id" element={<ServiceDetail />} />
           <Route path="products" element={<Products />} />
+          <Route path="components" element={<Components />} />
+          <Route path="component" element={<Navigate to="/components" replace />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="projects" element={<Navigate to="/gallery" replace />} />
           <Route path="projects/:id" element={<ProjectDetail />} />

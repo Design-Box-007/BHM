@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container } from '../../components/Container/Container';
 import { siteConfig } from '../../data/site';
-import { CheckCircle2, Mail, Phone, Clock, Send, ArrowUpRight } from 'lucide-react';
+import { CheckCircle2, Mail, Phone, Clock, Send } from 'lucide-react';
 
 export const ContactHero: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -68,12 +68,20 @@ export const ContactHero: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-[11px] uppercase tracking-wider text-white/60 block">Email Us</span>
-                  <a
-                    href={`mailto:${siteConfig.email}`}
-                    className="text-base sm:text-lg font-bold text-white hover:text-white/80 transition-colors"
-                  >
-                    {siteConfig.email}
-                  </a>
+                  <div className="space-y-0.5">
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="text-base sm:text-lg font-bold text-white hover:text-white/80 transition-colors block"
+                    >
+                      {siteConfig.email}
+                    </a>
+                    <a
+                      href={`mailto:${siteConfig.secondaryEmail}`}
+                      className="text-base sm:text-lg font-bold text-white hover:text-white/80 transition-colors block"
+                    >
+                      {siteConfig.secondaryEmail}
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -123,31 +131,7 @@ export const ContactHero: React.FC = () => {
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="pt-2">
-              <span className="text-[11px] uppercase tracking-wider text-white/60 block mb-3">
-                Follow BHMI
-              </span>
-              <div className="flex flex-wrap items-center gap-3">
-                {[
-                  { name: 'Facebook', href: 'https://facebook.com' },
-                  { name: 'Instagram', href: 'https://instagram.com' },
-                  { name: 'Twitter', href: 'https://x.com' },
-                  { name: 'LinkedIn', href: 'https://linkedin.com' },
-                ].map((s) => (
-                  <a
-                    key={s.name}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider border border-white/25 rounded-full text-white hover:bg-white hover:text-[#204268] transition-all inline-flex items-center gap-1"
-                  >
-                    <span>{s.name}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-70" />
-                  </a>
-                ))}
-              </div>
-            </div>
+
           </div>
 
           {/* =========================================================================

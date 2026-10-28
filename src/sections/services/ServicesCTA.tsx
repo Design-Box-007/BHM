@@ -60,6 +60,12 @@ export const ServicesCTA: React.FC = () => {
               >
                 {siteConfig.email}
               </a>
+              <a
+                href={`mailto:${siteConfig.secondaryEmail}`}
+                className="block text-sm text-[#204268]/70 hover:text-[#204268] transition-colors font-sans"
+              >
+                {siteConfig.secondaryEmail}
+              </a>
             </div>
 
             <p className="text-xs sm:text-sm text-[#204268]/80 leading-relaxed pt-2 font-sans">

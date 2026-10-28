@@ -49,6 +49,12 @@ export const ContactCTA: React.FC = () => {
                     >
                       {siteConfig.email}
                     </a>
+                    <a
+                      href={`mailto:${siteConfig.secondaryEmail}`}
+                      className="text-xs sm:text-sm font-bold text-[#204268] hover:text-[#204268]/70 transition-colors"
+                    >
+                      {siteConfig.secondaryEmail}
+                    </a>
                   </div>
                 </div>
               </div>

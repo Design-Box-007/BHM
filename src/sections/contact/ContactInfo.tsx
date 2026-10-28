@@ -17,7 +17,7 @@ export const ContactInfo: React.FC = () => {
       icon: Mail,
       title: 'Email Estimates',
       label: 'Direct RFQs & Engineering',
-      value: siteConfig.email,
+      value: `${siteConfig.email} / ${siteConfig.secondaryEmail}`,
       action: `mailto:${siteConfig.email}`,
       subtext: 'Replies within 4 business hours',
     },

@@ -2,17 +2,18 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { siteConfig } from '../../data/site';
 import { Container } from '../Container/Container';
-import { CornerUpRight, ArrowUpRight } from 'lucide-react';
+import { CornerUpRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const location = useLocation();
 
   const navItems = [
     { label: 'HOME', path: '/' },
+    { label: 'ABOUT US', path: '/about' },
     { label: 'SERVICE', path: '/services' },
     { label: 'PRODUCTS', path: '/products' },
-    { label: 'CONTACTS', path: '/contact' },
-    { label: 'LICENSES', path: '/about' },
+    { label: 'COMPONENTS', path: '/components' },
+    { label: 'CONTACT US', path: '/contact' },
   ];
 
   return (
@@ -20,7 +21,7 @@ export const Footer: React.FC = () => {
       <Container>
         {/* Top 3-Column Widget Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 pb-8 sm:pb-12 md:pb-16 border-b border-white/15 items-stretch">
-          {/* Column 1: Brand Info & Socials (4.5 cols) */}
+          {/* Column 1: Brand Info & Contact (4.5 cols) */}
           <div className="lg:col-span-4 flex flex-col justify-between space-y-8">
             <div className="space-y-4">
               <Link to="/" className="inline-flex items-center group">
@@ -37,34 +38,32 @@ export const Footer: React.FC = () => {
                 From structural bonding to custom metal fabrication, we bring durability and precision to every project we handle.
               </p>
 
-              <div className="pt-2">
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="text-base sm:text-lg font-bold text-white hover:text-white/80 transition-colors inline-block"
-                >
-                  {siteConfig.email}
-                </a>
+              <div className="pt-2 space-y-1.5">
+                <div>
+                  <a
+                    href={`tel:${siteConfig.phoneRaw}`}
+                    className="text-base sm:text-lg font-bold text-white hover:text-white/80 transition-colors inline-block"
+                  >
+                    Phone: {siteConfig.phone}
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="text-sm sm:text-base font-semibold text-white/90 hover:text-white transition-colors inline-block"
+                  >
+                    {siteConfig.email}
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href={`mailto:${siteConfig.secondaryEmail}`}
+                    className="text-sm sm:text-base font-semibold text-white/90 hover:text-white transition-colors inline-block"
+                  >
+                    {siteConfig.secondaryEmail}
+                  </a>
+                </div>
               </div>
-            </div>
-
-            {/* Social Pills */}
-            <div className="flex flex-wrap gap-2.5 pt-4">
-              {[
-                { name: 'FACEBOOK', href: 'https://facebook.com' },
-                { name: 'INSTAGRAM', href: 'https://instagram.com' },
-                { name: 'TWITTER', href: 'https://x.com' },
-              ].map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-1.5 text-xs font-bold uppercase tracking-wider border border-white/30 rounded-full text-white hover:bg-white hover:text-[#204268] transition-all inline-flex items-center gap-1.5"
-                >
-                  <span>{social.name}</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
-                </a>
-              ))}
             </div>
           </div>
 
@@ -84,7 +83,7 @@ export const Footer: React.FC = () => {
                     isActive
                       ? 'bg-white/20 border-white/40 text-white font-bold'
                       : 'bg-white/10 hover:bg-white/20 border-white/15 hover:border-white/30 text-white/90 hover:text-white'
-                  } border rounded-xl px-5 py-3.5 flex items-center justify-between text-xs sm:text-[13px] font-bold tracking-widest uppercase transition-all duration-200 group`}
+                  } border rounded-xl px-5 py-3 flex items-center justify-between text-xs sm:text-[13px] font-bold tracking-widest uppercase transition-all duration-200 group`}
                 >
                   <span className={isActive ? 'underline decoration-1 underline-offset-4 text-white' : ''}>
                     {item.label}
@@ -144,4 +143,3 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
-

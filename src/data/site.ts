@@ -10,6 +10,7 @@ export interface SiteConfig {
   phone: string;
   phoneRaw: string;
   email: string;
+  secondaryEmail: string;
   supportEmail: string;
   address: {
     street: string;
@@ -45,10 +46,11 @@ export const siteConfig: SiteConfig = {
   yearsExperience: 10,
   rating: "4.9/5",
   ratingCount: 148,
-  phone: "+1 (800) 582-9353",
-  phoneRaw: "+18005829353",
-  email: "info@bhmi-bonding.com",
-  supportEmail: "support@bhmi-bonding.com",
+  phone: "+971-555653998",
+  phoneRaw: "+971555653998",
+  email: "Info@bluehorizonmetal.com",
+  secondaryEmail: "Info@bhmi.com",
+  supportEmail: "Info@bhmi.com",
   address: {
     street: "71–75 Shelton Street, Covent Garden",
     city: "London",
