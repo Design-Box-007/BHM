@@ -1,42 +1,21 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { Container } from '../../components/Container/Container';
 import { galleryItems, type GalleryItem } from '../../data/gallery';
-import { ArrowLeft, ArrowRight, Maximize2, X, ChevronLeft, ChevronRight, Image as ImageIcon, Sparkles } from 'lucide-react';
+import { Maximize2, X, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { clsx } from 'clsx';
 
 export const GalleryGrid: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [activeAlbumId, setActiveAlbumId] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const sectionRef = useRef<HTMLElement>(null);
 
-  const categories = ['All', 'Structural', 'Piping', 'Custom Fabrication', 'Industrial'];
+  const categories = ['All', 'Structural', 'Custom Fabrication', 'Stainless Steel', 'Industrial'];
 
-  const filteredItems = selectedCategory === 'All'
+  const filteredItems: GalleryItem[] = selectedCategory === 'All'
     ? galleryItems
     : galleryItems.filter((item) => item.category === selectedCategory);
 
-  const activeAlbum: GalleryItem | undefined = activeAlbumId
-    ? galleryItems.find((item) => item.id === activeAlbumId)
-    : undefined;
-
-  const currentAlbumImages = activeAlbum?.images?.length ? activeAlbum.images : (activeAlbum ? [activeAlbum.image] : []);
-
-  const openAlbum = (id: string) => {
-    setActiveAlbumId(id);
-    if (sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
-  const handleBackToGrid = () => {
-    setActiveAlbumId(null);
-    setLightboxIndex(null);
-    if (sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+  const currentItem = lightboxIndex !== null ? filteredItems[lightboxIndex] : null;
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -47,16 +26,16 @@ export const GalleryGrid: React.FC = () => {
   };
 
   const showNext = useCallback(() => {
-    if (lightboxIndex !== null && currentAlbumImages.length > 0) {
-      setLightboxIndex((prev) => ((prev! + 1) % currentAlbumImages.length));
+    if (lightboxIndex !== null && filteredItems.length > 0) {
+      setLightboxIndex((prev) => ((prev! + 1) % filteredItems.length));
     }
-  }, [lightboxIndex, currentAlbumImages.length]);
+  }, [lightboxIndex, filteredItems.length]);
 
   const showPrev = useCallback(() => {
-    if (lightboxIndex !== null && currentAlbumImages.length > 0) {
-      setLightboxIndex((prev) => (prev! === 0 ? currentAlbumImages.length - 1 : prev! - 1));
+    if (lightboxIndex !== null && filteredItems.length > 0) {
+      setLightboxIndex((prev) => (prev! === 0 ? filteredItems.length - 1 : prev! - 1));
     }
-  }, [lightboxIndex, currentAlbumImages.length]);
+  }, [lightboxIndex, filteredItems.length]);
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -97,177 +76,147 @@ export const GalleryGrid: React.FC = () => {
   }, [lightboxIndex]);
 
   return (
-    <section ref={sectionRef} className="py-10 sm:py-16 md:py-24 bg-[#204268] border-b border-white/10 min-h-[600px] relative">
+    <section className="py-10 sm:py-16 md:py-24 bg-[#204268] border-b border-white/10 min-h-[600px] relative font-sans">
       <Container>
-        {/* VIEW 1: Main Category Cards Layout */}
-        {!activeAlbum && (
-          <div className="animate-fadeIn">
-            {/* Filter Pills Header */}
-            <div className="flex flex-wrap items-center gap-3 mb-8 sm:mb-12 pb-4 sm:pb-6 border-b border-white/10">
-              {categories.map((cat) => (
+        {/* Filter Pills Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 sm:mb-12 pb-6 border-b border-white/10">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+            {categories.map((cat) => {
+              const count = cat === 'All'
+                ? galleryItems.length
+                : galleryItems.filter((i) => i.category === cat).length;
+
+              return (
                 <button
                   key={cat}
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => {
+                    setSelectedCategory(cat);
+                    setLightboxIndex(null);
+                  }}
                   className={clsx(
-                    'px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer font-sans',
+                    'px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer font-sans inline-flex items-center gap-2',
                     selectedCategory === cat
                       ? 'bg-white text-[#204268] font-bold shadow-lg shadow-white/10 scale-105'
                       : 'bg-white/10 text-white/80 hover:bg-white/20 hover:text-white border border-white/20'
                   )}
                 >
-                  {cat}
+                  <span>{cat}</span>
+                  <span
+                    className={clsx(
+                      'text-[10px] sm:text-xs px-2 py-0.5 rounded-full font-mono',
+                      selectedCategory === cat
+                        ? 'bg-[#204268] text-white'
+                        : 'bg-white/20 text-white/90'
+                    )}
+                  >
+                    {count}
+                  </span>
                 </button>
-              ))}
-            </div>
-
-            {/* Cards 3-Column Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {filteredItems.map((item) => (
-                <div
-                  key={item.id}
-                  onClick={() => openAlbum(item.id)}
-                  className="group relative rounded-2xl p-7 md:p-8 bg-white/5 border border-white/15 hover:border-white/40 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl cursor-pointer transform hover:-translate-y-1"
-                >
-                  {/* Top Bar inside Card: Quote Icon & View Images Button */}
-                  <div>
-                    <div className="flex items-center justify-between mb-6">
-                      {/* Stylized Quotation Mark */}
-                      <span className="text-3xl font-serif font-black text-white leading-none select-none">
-                        &ldquo;&ldquo;
-                      </span>
-
-                      {/* View Images Pill Button */}
-                      <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/15 group-hover:bg-white text-white group-hover:text-[#204268] border border-white/30 text-xs font-semibold uppercase tracking-wider transition-all duration-300 font-sans">
-                        View Images
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                      </span>
-                    </div>
-
-                    {/* Card Title */}
-                    <h3 className="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-white group-hover:text-white/90 transition-colors leading-snug mb-3">
-                      {item.title}
-                    </h3>
-
-                    {/* Card Description */}
-                    <p className="text-sm md:text-[15px] text-white/80 leading-relaxed font-normal mb-6 font-sans">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  {/* Card Bottom Meta Footer */}
-                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/70 font-mono">
-                    <span className="text-white font-sans uppercase font-medium tracking-wider text-[11px]">
-                      {item.category}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <ImageIcon className="w-3.5 h-3.5 text-white" />
-                      {item.images?.length || 1} Photos
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
-        )}
 
-        {/* VIEW 2: Specific Gallery Images Grid Layout */}
-        {activeAlbum && (
-          <div className="animate-fadeIn">
-            {/* Top Navigation Bar with Back Button */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 pb-6 border-b border-white/10">
-              <button
-                onClick={handleBackToGrid}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#204268] hover:bg-white/90 text-xs md:text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-lg cursor-pointer self-start transform hover:-translate-x-1 font-sans"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Back
-              </button>
+          {/* <div className="text-xs sm:text-sm font-mono text-white/70 self-start sm:self-auto">
+            Showing <span className="text-white font-bold">{filteredItems.length}</span> Projects
+          </div> */}
+        </div>
 
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-semibold uppercase tracking-wider text-white font-sans">
-                  {activeAlbum.category}
+        {/* Gallery Image Grid with Same Dimension (aspect-[4/3]) and Responsive Columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
+          {filteredItems.map((item, idx) => (
+            <div
+              key={item.id}
+              onClick={() => openLightbox(idx)}
+              className="group relative rounded-xl overflow-hidden bg-white/5 border border-white/15 hover:border-white/50 shadow-xl cursor-pointer aspect-[4/3] transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-1.5"
+            >
+              {/* Image with uniform aspect ratio */}
+              <img
+                src={item.image}
+                alt={item.title}
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+              />
+
+              {/* Gradient Overlay for Text Legibility */}
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-[#204268] via-[#204268]/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity duration-300" /> */}
+
+              {/* Top Bar: Category Pill & Zoom Badge */}
+              <div className="absolute top-4 inset-x-4 flex items-center justify-between z-10">
+                <span className="px-3 py-1 rounded-full bg-[#204268]/85 backdrop-blur-md border border-white/20 text-white text-[11px] font-semibold uppercase tracking-wider font-sans shadow-md">
+                  {item.category}
                 </span>
-                <span className="text-xs text-white/70 font-mono">
-                  {currentAlbumImages.length} Curated Images
-                </span>
+
+                <div className="w-9 h-9 rounded-full bg-[#204268]/85 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 shadow-md">
+                  <Maximize2 className="w-4 h-4 text-white" />
+                </div>
               </div>
-            </div>
 
-            {/* Album Header Summary */}
-            <div className="mb-10 max-w-3xl">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase text-white tracking-tight mb-3">
-                {activeAlbum.title}
-              </h2>
-              <p className="text-sm md:text-base text-white/80 leading-relaxed font-sans">
-                {activeAlbum.description}
-              </p>
-            </div>
+              {/* Bottom Card Content: Title & Description */}
+              {/* <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6 z-10 flex flex-col justify-end">
+                <h3 className="text-lg sm:text-xl font-display font-bold uppercase tracking-tight text-white mb-1.5 leading-snug line-clamp-1 group-hover:text-white transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-xs sm:text-[13px] text-white/80 leading-relaxed font-normal line-clamp-2 mb-2 font-sans">
+                  {item.description}
+                </p>
 
-            {/* Photos 3-Column Responsive Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {currentAlbumImages.map((imgUrl, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => openLightbox(idx)}
-                  className="group relative rounded-2xl overflow-hidden bg-[#204268] border border-white/15 hover:border-white/50 shadow-xl cursor-pointer aspect-[4/3] transition-all duration-500 hover:shadow-2xl"
-                >
-                  <img
-                    src={imgUrl}
-                    alt={`${activeAlbum.title} - ${idx + 1}`}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
-                  />
-
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#204268]/90 via-[#204268]/20 to-transparent opacity-40 group-hover:opacity-80 transition-opacity duration-300" />
-
-                  {/* Top Enlarge Badge */}
-                  <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#204268]/80 border border-white/30 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
-                    <Maximize2 className="w-4 h-4 text-white" />
-                  </div>
-
-                  {/* Bottom Photo Count Badge */}
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <span className="font-mono text-[11px] text-white/90 bg-[#204268]/90 px-2.5 py-1 rounded-[4px] border border-white/20">
-                      Photo {idx + 1} of {currentAlbumImages.length}
-                    </span>
-                    <span className="text-white font-semibold uppercase tracking-wider text-[10px] flex items-center gap-1 font-sans">
-                      <Sparkles className="w-3 h-3" /> View Full
-                    </span>
-                  </div>
+                <div className="flex items-center justify-between text-xs text-white/70 pt-2 border-t border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-[11px] uppercase tracking-wider text-white font-semibold flex items-center gap-1 font-sans">
+                    <Sparkles className="w-3 h-3 text-white" /> View Full Image
+                  </span>
+                  <span className="font-mono text-[11px] text-white/70">
+                    {item.location}
+                  </span>
                 </div>
-              ))}
+              </div> */}
             </div>
-          </div>
-        )}
+          ))}
+        </div>
 
-        {/* Fullscreen Lightbox Modal (Matching Screenshot - Mounted to Body via Portal) */}
-        {lightboxIndex !== null && activeAlbum && typeof document !== 'undefined' && createPortal(
+        {/* Fullscreen Lightbox Modal - Mounted to Body via Portal */}
+        {lightboxIndex !== null && currentItem && typeof document !== 'undefined' && createPortal(
           <div
             data-lenis-prevent
-            className="fixed inset-0 z-[99999] flex items-center justify-center p-4 sm:p-8 md:p-12 bg-black/80 backdrop-blur-md select-none overflow-hidden touch-none"
+            className="fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-6 md:p-10 bg-black/85 backdrop-blur-md select-none overflow-hidden touch-none"
             onClick={closeLightbox}
           >
-            {/* Top Right Close Button */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                closeLightbox();
-              }}
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#242424]/90 hover:bg-black text-white border border-white/20 flex items-center justify-center transition-all duration-200 cursor-pointer shadow-2xl hover:scale-105"
-              aria-label="Close Lightbox"
+            {/* Top Bar with Title, Category, Counter & Close */}
+            <div
+              className="absolute top-3 inset-x-3 sm:top-5 sm:inset-x-6 z-50 flex items-center justify-between pointer-events-none"
+              onClick={(e) => e.stopPropagation()}
             >
-              <X className="w-5 h-5" />
-            </button>
+              <div className="flex items-center gap-3 bg-[#1e293b]/90 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full pointer-events-auto">
+                <span className="text-xs sm:text-sm font-display font-bold text-white uppercase tracking-wider">
+                  {currentItem.title}
+                </span>
+                <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-white/20 text-white font-sans uppercase">
+                  {currentItem.category}
+                </span>
+                <span className="text-xs text-white/60 font-mono hidden sm:inline">
+                  {lightboxIndex + 1} / {filteredItems.length}
+                </span>
+              </div>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  closeLightbox();
+                }}
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#1e293b]/90 hover:bg-black text-white border border-white/20 flex items-center justify-center transition-all duration-200 cursor-pointer shadow-2xl hover:scale-105 pointer-events-auto"
+                aria-label="Close Lightbox"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
 
             {/* Left Nav Button */}
-            {currentAlbumImages.length > 1 && (
+            {filteredItems.length > 1 && (
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   showPrev();
                 }}
-                className="absolute left-4 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#242424]/90 hover:bg-black text-white border border-white/20 flex items-center justify-center transition-all duration-200 cursor-pointer shadow-2xl hover:scale-105"
+                className="absolute left-3 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#1e293b]/90 hover:bg-black text-white border border-white/20 flex items-center justify-center transition-all duration-200 cursor-pointer shadow-2xl hover:scale-105"
                 aria-label="Previous image"
               >
                 <ChevronLeft className="w-6 h-6" />
@@ -275,13 +224,13 @@ export const GalleryGrid: React.FC = () => {
             )}
 
             {/* Right Nav Button */}
-            {currentAlbumImages.length > 1 && (
+            {filteredItems.length > 1 && (
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   showNext();
                 }}
-                className="absolute right-4 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#242424]/90 hover:bg-black text-white border border-white/20 flex items-center justify-center transition-all duration-200 cursor-pointer shadow-2xl hover:scale-105"
+                className="absolute right-3 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#1e293b]/90 hover:bg-black text-white border border-white/20 flex items-center justify-center transition-all duration-200 cursor-pointer shadow-2xl hover:scale-105"
                 aria-label="Next image"
               >
                 <ChevronRight className="w-6 h-6" />
@@ -290,14 +239,18 @@ export const GalleryGrid: React.FC = () => {
 
             {/* Centered Image Container */}
             <div
-              className="relative z-20 max-w-[92vw] sm:max-w-[85vw] md:max-w-4xl max-h-[85vh] flex items-center justify-center"
+              className="relative z-20 max-w-[94vw] sm:max-w-[88vw] md:max-w-5xl max-h-[82vh] flex flex-col items-center justify-center pt-10"
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={currentAlbumImages[lightboxIndex]}
-                alt={activeAlbum.title}
-                className="max-w-full max-h-[85vh] w-auto h-auto object-contain rounded-xl sm:rounded-2xl shadow-2xl block mx-auto transition-transform duration-300"
+                src={currentItem.image}
+                alt={currentItem.title}
+                className="max-w-full max-h-[76vh] sm:max-h-[80vh] w-auto h-auto object-contain rounded-xl sm:rounded-2xl shadow-2xl block mx-auto transition-transform duration-300"
               />
+
+              <p className="text-center text-xs sm:text-sm text-white/80 mt-3 max-w-xl px-4 line-clamp-2">
+                {currentItem.description}
+              </p>
             </div>
           </div>,
           document.body
