@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { Container } from '../../components/Container/Container';
 import { galleryItems, type GalleryItem } from '../../data/gallery';
-import { Maximize2, X, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { clsx } from 'clsx';
 
 export const GalleryGrid: React.FC = () => {
